@@ -8,6 +8,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import ConcertsSection from '@/components/ConcertsSection';
 import MerchSection from '@/components/MerchSection';
+import CommunitySection from '@/components/CommunitySection';
 
 // SEO básico (reemplaza al <head> de Astro)
 export const metadata = {
@@ -25,6 +26,7 @@ export default function Home() {
             <ConcertsSection />
             <BiographySection />
             <MerchSection />
+            <CommunitySection />
             <ContactSection />
             <Footer />
         </main>
