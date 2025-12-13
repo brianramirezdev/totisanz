@@ -23,10 +23,10 @@ export default function Home() {
             <HeroSection />
             <SingleSection />
             <AlbumSection />
-            <ConcertsSection />
             <BiographySection />
-            <MerchSection />
+            <ConcertsSection />
             <CommunitySection />
+            <MerchSection />
             <ContactSection />
             <Footer />
         </main>

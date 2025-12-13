@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Loader, Lock, ShoppingBag } from 'lucide-react';
+import { Lock, ShoppingBag } from 'lucide-react';
 import Image from 'next/image';
 
 const products = [
@@ -13,7 +13,7 @@ const products = [
 
 export default function MerchSection() {
     return (
-        <section id="merch" className="bg-white px-6 py-20 md:py-32 ">
+        <section id="merch" className="bg-gray-50 px-6 py-20 md:py-32 m-4 rounded border border-gray-200">
             <div className="mx-auto max-w-7xl">
                 <h2 className="mb-4 text-6xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">MERCH</h2>
                 <p className="mb-16 text-2xl text-gray-400 md:text-3xl">Colección 2026</p>
@@ -33,9 +33,9 @@ export default function MerchSection() {
                                 <div key={product.id} className="flex min-w-28 flex-col items-center select-none">
                                     {/* Punto */}
                                     <div
-                                        className={`relative z-10 h-4 w-4 rounded-full border-2 border-white
-              ${product.available ? 'bg-orange-500 ring-4 ring-orange-500/20' : 'bg-gray-300'}
-            `}
+                                        className={`relative z-10 h-4 w-4 rounded-full border-2 border-white ${
+                                            product.available ? 'bg-orange-500 ring-4 ring-orange-500/20' : 'bg-gray-300'
+                                        }`}
                                     />
 
                                     {/* Fecha */}

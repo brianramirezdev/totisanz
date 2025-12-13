@@ -12,7 +12,7 @@ const concerts = [
 
 export default function ConcertsSection() {
     return (
-        <section id="conciertos" className="bg-white px-4 py-16 sm:px-6 md:py-32">
+        <section id="conciertos" className="bg-gray-50 border-t border-b border-gray-200 px-4 py-16 sm:px-6 md:py-32">
             <div className="mx-auto max-w-7xl">
                 <h2 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl">CONCIERTOS</h2>
 

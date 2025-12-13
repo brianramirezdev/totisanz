@@ -16,11 +16,11 @@ const communityPhotos = [
 
 export default function CommunitySection() {
     return (
-        <section id="comunidad" className="bg-black px-6 py-20 text-white md:py-32 ">
+        <section id="comunidad" className="bg-white px-6 py-20 text-black md:py-32">
             <div className="mx-auto max-w-7xl">
                 <div className="mb-16">
                     <h2 className="mb-4 text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">COMUNIDAD</h2>
-                    <p className="text-xl text-gray-400 md:text-2xl">Fotos con los fans y el público</p>
+                    <p className="text-xl text-gray-500 md:text-2xl">Fotos con los fans y el público</p>
                 </div>
 
                 <div className="h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
@@ -41,18 +41,20 @@ export default function CommunitySection() {
                 <div className="mt-20 text-center">
                     <div className="mx-auto max-w-2xl">
                         <h3 className="mb-4 text-2xl font-bold md:text-3xl">¿Tienes una foto con Toti?</h3>
-                        <p className="mb-6 text-gray-400">
-                            Comparte tu momento con nosotros usando el hashtag <span className="ml-1 font-bold text-orange-500">#TotiSanzFans</span>
+                        <p className="mb-6 text-gray-500">
+                            Comparte tu momento con nosotros usando el hashtag
+                            <span className="ml-1 font-bold text-orange-500">#TotiSanzFans</span>
                         </p>
+
                         <div className="flex flex-wrap justify-center gap-4">
                             <a
                                 href="https://www.instagram.com/toti.sanz/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-6 py-3 font-semibold transition-all hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
+                                className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-700 transition-all hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
                             >
                                 Etiquétanos en Instagram
-                                <SiInstagram className="h-6 w-6 ml-2" />
+                                <SiInstagram className="ml-2 h-6 w-6" />
                             </a>
                         </div>
                     </div>

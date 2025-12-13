@@ -9,10 +9,10 @@ const links = [
     ['INICIO', '#inicio'],
     ['SINGLE', '#single'],
     ['ÁLBUM', '#album'],
-    ['CONCIERTOS', '#conciertos'],
     ['BIOGRAFÍA', '#biografia'],
-    ['MERCH', '#merch'],
+    ['CONCIERTOS', '#conciertos'],
     ['COMUNIDAD', '#comunidad'],
+    ['MERCH', '#merch'],
     ['CONTACTO', '#contacto'],
 ];
 
@@ -27,7 +27,7 @@ export default function Navigation() {
         <nav className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md">
             <div className="mx-auto flex max-w-7xl items-center md:justify-center lg:justify-between px-6 py-4 lg:px-8">
                 {/* Logo */}
-                <Link href="#inicio" className="hidden lg:block text-2xl font-bold transition-colors hover:text-orange-500 lg:text-3xl">
+                <Link href="#inicio" className="hidden  lg:block text-2xl font-bold transition-colors hover:text-orange-500 lg:text-3xl">
                     TOTI SANZ
                 </Link>
 
@@ -42,11 +42,8 @@ export default function Navigation() {
 
                 {/* Mobile Menu Button */}
                 <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                    <SheetTrigger asChild className="md:hidden">
-                        <button
-                            className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 transition-colors hover:bg-gray-100"
-                            aria-label="Abrir menú"
-                        >
+                    <SheetTrigger asChild className="md:hidden ml-auto">
+                        <button aria-label="Abrir menú">
                             <Menu className="h-5 w-5" />
                         </button>
                     </SheetTrigger>
@@ -66,10 +63,9 @@ export default function Navigation() {
                                     key={label}
                                     href={href}
                                     onClick={handleLinkClick}
-                                    className="group flex items-center justify-between rounded-lg px-4 py-4 pl-0 text-lg transition-all hover:bg-orange-50 hover:text-orange-500"
+                                    className="group flex items-center justify-between px-4 py-4 pl-0 text-lg transition-all hover:bg-orange-50 hover:text-orange-500 border-b border-orange-400"
                                 >
                                     <span>{label}</span>
-                                    <span className="text-orange-500 opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100">→</span>
                                 </Link>
                             ))}
                         </nav>
