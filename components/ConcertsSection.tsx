@@ -43,7 +43,7 @@ export default function ConcertsSection() {
                                 className="group flex flex-col gap-4 border-b border-gray-200 py-5 transition-all hover:border-orange-500 sm:flex-row sm:items-center sm:justify-between"
                             >
                                 {/* Fecha */}
-                                <div className="flex items-baseline gap-2 sm:gap-3 sm:min-w-[10rem]">
+                                <div className="flex items-baseline gap-2 sm:gap-3 sm:min-w-40">
                                     <span className="text-3xl font-bold tabular-nums sm:text-4xl md:text-5xl">{concert.date}</span>
                                     <span className="text-xs font-medium uppercase text-gray-500 sm:text-sm">{concert.month}</span>
                                 </div>

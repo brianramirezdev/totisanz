@@ -42,7 +42,9 @@ export default function MerchSection() {
                                     <span className="mt-2 text-sm font-semibold text-gray-700">{product.date}</span>
 
                                     {/* Label */}
-                                    <span className={`mt-1 text-xs text-gray-500 ${!product.available ? 'blur-sm' : ''}`}>{!product.available ? 'Shhh' : product.name}</span>
+                                    <span className={`mt-1 text-xs text-gray-500 ${!product.available ? 'blur-xs' : ''}`}>
+                                        {!product.available ? 'próximamente' : product.name}
+                                    </span>
                                 </div>
                             ))}
                         </div>
