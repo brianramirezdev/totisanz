@@ -12,8 +12,8 @@ export default function BookButton() {
                     rotate-90
                     bg-black
                     px-4 py-2
+                    rounded
                     text-lg uppercase
-                    border border-white
                     hover:bg-orange-500
                     active:scale-95
                 "
