@@ -6,6 +6,8 @@ import AlbumSection from '@/components/AlbumSection';
 import BiographySection from '@/components/BiographySection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import ConcertsSection from '@/components/ConcertsSection';
+import MerchSection from '@/components/MerchSection';
 
 // SEO básico (reemplaza al <head> de Astro)
 export const metadata = {
@@ -20,7 +22,9 @@ export default function Home() {
             <HeroSection />
             <SingleSection />
             <AlbumSection />
+            <ConcertsSection />
             <BiographySection />
+            <MerchSection />
             <ContactSection />
             <Footer />
         </main>

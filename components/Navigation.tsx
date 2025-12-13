@@ -1,6 +1,5 @@
-// components/Navigation.tsx
 import Link from 'next/link';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 
 const links = [
@@ -37,6 +36,7 @@ export default function Navigation() {
                         <Menu />
                     </SheetTrigger>
                     <SheetContent side="right" className="space-y-4 pt-10">
+                        <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
                         {links.map(([label, href]) => (
                             <Link key={label} href={href} className="block font-medium hover:text-orange-500">
                                 {label}
