@@ -1,8 +1,32 @@
 import AudioPlayer from '@/components/AudioPlayer';
+import { Button } from './ui/button';
+import Link from 'next/link';
+import { SiApplemusic, SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
+
+const musicLinks = [
+    {
+        id: 'spotify',
+        label: 'Spotify',
+        href: 'https://open.spotify.com/intl-es/track/3dpfkFjhgLy1YUYqsJyZca',
+        icon: <SiSpotify />,
+    },
+    {
+        id: 'youtube',
+        label: 'YouTube',
+        href: 'https://www.youtube.com/watch?v=ZVOvuItRNvs',
+        icon: <SiYoutube />,
+    },
+    {
+        id: 'apple',
+        label: 'Apple Music',
+        href: 'https://music.apple.com/es/album/como-te-pido/1718941267?i=1718941268',
+        icon: <SiApplemusic />,
+    },
+];
 
 export default function SingleSection() {
     return (
-        <section id="single" className="bg-white md:px-0 py-8 md:py-16 overflow-hidden">
+        <section id="single" className="bg-white md:px-0 py-8 md:py- overflow-hidden">
             <div className="mt-8 mb-12 md:mb-20 border-t border-b border-gray-900 py-4 md:py-6">
                 <div className="flex animate-[marquee_40s_linear_infinite] select-none">
                     <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗&nbsp;</h2>
@@ -24,10 +48,21 @@ export default function SingleSection() {
 
                 {/* Audio */}
                 <div className="mb-12 md:mb-16">
-                    <p className="mb-3 text-sm font-medium uppercase tracking-wide text-gray-600">Escucha a Toti hablar sobre el single</p>
+                    {/* <p className="mb-3 text-sm font-medium uppercase tracking-wide text-gray-600">Escucha a Toti hablar sobre el single</p> */}
 
-                    <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-8">
+                    {/* <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-8">
                         <AudioPlayer src="/audios/toti-voice-note.mp3" showLinks />
+                    </div> */}
+
+                    <div className="flex flex-col gap-3">
+                        {musicLinks.map(({ id, href, label, icon }) => (
+                            <Button key={id} variant="outline" asChild className="gap-2 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500">
+                                <Link href={href} target="_blank" rel="noopener noreferrer">
+                                    {icon}
+                                    {label}
+                                </Link>
+                            </Button>
+                        ))}
                     </div>
                 </div>
             </div>
