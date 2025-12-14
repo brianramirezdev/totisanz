@@ -1,29 +1,45 @@
-'use client';
-
-import { Button } from '@/components/ui/button';
-import { SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
-import Link from 'next/link';
-import AudioPlayer from './AudioPlayer';
+import AudioPlayer from '@/components/AudioPlayer';
 
 export default function SingleSection() {
     return (
-        <section id="single" className="bg-white px-6 py-20 md:py-32">
-            <div className="mx-auto max-w-7xl">
-                {/* Título artístico */}
-                <div className="mb-12 md:mb-16">
-                    <h2 className="mb-4 text-6xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">Single</h2>
-                    <h3 className="text-6xl font-bold italic tracking-tight text-orange-500 md:text-7xl lg:text-8xl xl:text-9xl">Como Te Pido</h3>
+        <section id="single" className="bg-white px-6 py-16 md:py-24">
+            <div className="mx-auto max-w-7xl overflow-hidden">
+                {/* Marquee contextual */}
+                <div className="mt-8 mb-12 border-t border-b border-gray-900 py-4 md:py-6">
+                    <div className="flex w-max gap-12 animate-[marquee_90s_linear_infinite] select-none">
+                        <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">SINGLE * NOVEDAD * SINGLE * NOVEDAD *</h2>
+                        <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">SINGLE * NOVEDAD * SINGLE * NOVEDAD *</h2>
+                    </div>
                 </div>
 
-                {/* Audio nativo con estilo personalizado */}
-                <div className="mb-8 md:mb-12">
+                {/* Título principal */}
+                <h3 className="mb-2 text-5xl font-bold italic tracking-tight text-orange-500  md:text-7xl lg:text-8xl xl:text-9xl">Como Te Pido</h3>
+
+                {/* Video */}
+                <div className="overflow-hidden rounded-xl shadow-lg mb-10">
+                    <div className="aspect-video">
+                        <iframe src="https://www.youtube.com/embed/ZVOvuItRNvs" className="h-full w-full" allowFullScreen title="Como Te Pido - Toti Sanz" />
+                    </div>
+                </div>
+
+                {/* Audio */}
+                <div className="mb-12 md:mb-16">
                     <p className="mb-3 text-sm font-medium uppercase tracking-wide text-gray-600">Escucha a Toti hablar sobre el single</p>
 
                     <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-8">
                         <AudioPlayer src="/audios/toti-voice-note.mp3" showLinks />
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
 
-                        {/* Botones streaming */}
-                        {/* <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+{
+    /* Botones streaming */
+}
+{
+    /* <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
                             <Button
                                 variant="ghost"
                                 size="lg"
@@ -47,17 +63,5 @@ export default function SingleSection() {
                                     Ver en YouTube
                                 </Link>
                             </Button>
-                        </div> */}
-                    </div>
-                </div>
-
-                {/* Video */}
-                <div className="mb-8 overflow-hidden rounded-xl shadow-2xl md:mb-12">
-                    <div className="aspect-video">
-                        <iframe src="https://www.youtube.com/embed/ZVOvuItRNvs" className="h-full w-full" allowFullScreen title="Como Te Pido - Toti Sanz" />
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+                        </div> */
 }

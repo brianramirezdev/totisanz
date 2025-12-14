@@ -8,8 +8,11 @@ const tracks = ['como te pido', 'no pares', 'perdimos el control', 'volveré', '
 export default function AlbumSection() {
     return (
         <section id="album" className="bg-linear-to-b from-zinc-900 to-black px-6 py-20 text-white md:py-32 rounded m-4">
-            <div className="mx-auto max-w-7xl">
-                <h2 className="mb-16 text-6xl font-bold md:text-7xl lg:text-8xl xl:text-9xl ">ÁLBUM</h2>
+            <div className="mx-auto max-w-7xl overflow-hidden">
+                <div className="flex w-max gap-8 animate-[marquee_60s_linear_infinite] mb-16">
+                    <h2 className="text-nowrap text-6xl font-bold md:text-7xl lg:text-8xl xl:text-9xl">ÁLBUM * ÁLBUM * ÁLBUM * ÁLBUM *</h2>
+                    <h2 className="text-nowrap text-6xl font-bold md:text-7xl lg:text-8xl xl:text-9xl">ÁLBUM * ÁLBUM * ÁLBUM * ÁLBUM *</h2>
+                </div>
 
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
                     {/* Portada del álbum */}
