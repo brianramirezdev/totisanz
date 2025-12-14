@@ -5,13 +5,19 @@ const communityPhotos = [
     { id: '1', img: '/images/community/photo-1.jpg', url: '#', height: 800 },
     { id: '2', img: '/images/community/photo-2.jpg', url: '#', height: 600 },
     { id: '3', img: '/images/community/photo-3.jpg', url: '#', height: 900 },
+    { id: '10', img: '/images/community/photo-10.jpg', url: '#', height: 700 },
     { id: '4', img: '/images/community/photo-4.jpg', url: '#', height: 700 },
     { id: '5', img: '/images/community/photo-5.jpg', url: '#', height: 850 },
     { id: '6', img: '/images/community/photo-6.jpg', url: '#', height: 650 },
     { id: '7', img: '/images/community/photo-7.jpg', url: '#', height: 750 },
     { id: '8', img: '/images/community/photo-8.jpg', url: '#', height: 800 },
     { id: '9', img: '/images/community/photo-9.jpg', url: '#', height: 900 },
-    { id: '10', img: '/images/community/photo-10.jpg', url: '#', height: 700 },
+    { id: '11', img: '/images/community/photo-11.jpg', url: '#', height: 700 },
+    { id: '16', img: '/images/community/photo-16.jpg', url: '#', height: 700 },
+    { id: '12', img: '/images/community/photo-12.jpg', url: '#', height: 700 },
+    { id: '13', img: '/images/community/photo-13.jpg', url: '#', height: 700 },
+    { id: '14', img: '/images/community/photo-14.jpg', url: '#', height: 700 },
+    { id: '15', img: '/images/community/photo-15.jpg', url: '#', height: 700 },
 ];
 
 export default function CommunitySection() {
