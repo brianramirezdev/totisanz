@@ -22,7 +22,7 @@ export default function AudioPlayer({
     showLinks = false,
     spotifyUrl = 'https://open.spotify.com/intl-es/track/3dpfkFjhgLy1YUYqsJyZca',
     youtubeUrl = 'https://www.youtube.com/watch?v=ZVOvuItRNvs',
-    appleMusicUrl = 'https://music.apple.com/es/artist/toti-sanz/1718940361',
+    appleMusicUrl = 'https://music.apple.com/es/album/como-te-pido/1718941267?i=1718941268',
 }: AudioPlayerProps) {
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -141,7 +141,7 @@ export default function AudioPlayer({
                         </Link>
                     </Button>
                     <Button variant="outline" asChild className="gap-2 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500">
-                        <Link href={youtubeUrl} target="_blank">
+                        <Link href={appleMusicUrl} target="_blank">
                             <SiApplemusic /> Apple Music
                         </Link>
                     </Button>
