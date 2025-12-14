@@ -7,7 +7,7 @@ const tracks = ['Como te pido', 'No pares', 'Perdimos el control', 'Volveré', '
 
 export default function AlbumSection() {
     return (
-        <section id="album" className="bg-linear-to-b from-zinc-900 to-black px-6 py-8 text-white md:py-16 lg:py-24 rounded m-4 lg:m-8">
+        <section id="album" className="bg-linear-to-b from-zinc-900 to-black px-6 py-8 text-white md:py-16 lg:py-24 rounded mx-4 lg:mx-8">
             <div className="mx-auto max-w-7xl overflow-hidden">
                 <div className="flex w-max animate-[marquee_40s_linear_infinite] mb-8 md:mb-16">
                     <h2 className="text-nowrap text-6xl font-bold md:text-7xl lg:text-8xl xl:text-9xl">ÁLBUM ∗ ÁLBUM ∗ ÁLBUM ∗ ÁLBUM ∗&nbsp;</h2>
