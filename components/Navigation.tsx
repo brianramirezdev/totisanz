@@ -25,12 +25,7 @@ export default function Navigation() {
 
     return (
         <nav className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md">
-            <div className="mx-auto flex max-w-7xl items-center md:justify-center lg:justify-between px-6 py-4 lg:px-8">
-                {/* Logo */}
-                <Link href="#inicio" className="hidden  lg:block text-2xl font-bold transition-colors hover:text-orange-500 lg:text-3xl">
-                    TOTI SANZ
-                </Link>
-
+            <div className="mx-auto flex max-w-7xl items-center justify-center px-6 py-4 lg:px-8">
                 {/* Desktop Navigation */}
                 <div className="hidden items-center gap-8 md:flex">
                     {links.map(([label, href]) => (
@@ -63,7 +58,7 @@ export default function Navigation() {
                                     key={label}
                                     href={href}
                                     onClick={handleLinkClick}
-                                    className="group flex items-center justify-between px-4 py-4 pl-0 text-lg transition-all hover:bg-orange-50 hover:text-orange-500 border-b border-orange-400"
+                                    className="group flex items-center justify-between px-4 py-4 pl-2 text-lg transition-all hover:bg-orange-50 hover:text-orange-500 border-b border-orange-400"
                                 >
                                     <span>{label}</span>
                                 </Link>

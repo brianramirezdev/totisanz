@@ -9,7 +9,7 @@ export default function HeroSection() {
 
             {/* Imagen de fondo */}
             <div className="absolute inset-0">
-                <Image src="/images/hero.jpg" unoptimized alt="Toti Sanz" fill priority sizes="100vw" className="object-cover" />
+                <Image src="/images/hero.jpg" unoptimized alt="Toti Sanz" fill priority sizes="100vw" className="object-cover opacity-90" />
             </div>
 
             <div className="absolute top-24 left-0 z-10 flex w-full flex-col items-center gap-4 px-6 sm:top-28 md:top-32 md:flex-row md:items-start md:justify-between md:px-16">
