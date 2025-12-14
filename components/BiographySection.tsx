@@ -36,7 +36,7 @@ export default function BiographySection() {
     return (
         <section id="biografia" className="bg-white px-6 py-20 text-black md:py-32">
             <div className="mx-auto max-w-7xl">
-                <div className="mb-16">
+                <div className="mb-8">
                     <h2 className="mb-4 text-6xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">BIOGRAFÍA</h2>
                     <p className="flex items-center gap-2 text-xl text-gray-500 md:text-2xl">
                         <Mic2 className="h-6 w-6" />

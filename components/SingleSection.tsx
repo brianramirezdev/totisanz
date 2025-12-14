@@ -2,19 +2,15 @@ import AudioPlayer from '@/components/AudioPlayer';
 
 export default function SingleSection() {
     return (
-        <section id="single" className="bg-white px-6 py-16 md:py-24">
-            <div className="mx-auto max-w-7xl overflow-hidden">
-                {/* Marquee contextual */}
-                <div className="mt-8 mb-12 border-t border-b border-gray-900 py-4 md:py-6">
-                    <div className="flex w-max animate-[marquee_60s_linear_infinite] select-none">
-                        <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">
-                            SINGLE * NOVEDAD * SINGLE * NOVEDAD *&nbsp;
-                        </h2>
-                        <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">
-                            SINGLE * NOVEDAD * SINGLE * NOVEDAD *&nbsp;
-                        </h2>
-                    </div>
+        <section id="single" className="bg-white md:px-0 py-16 md:py-24 overflow-hidden">
+            <div className="mt-8 mb-12 border-t border-b border-gray-900 py-4 md:py-6">
+                <div className="flex animate-[marquee_40s_linear_infinite] select-none">
+                    <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗&nbsp;</h2>
+                    <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗&nbsp;</h2>
                 </div>
+            </div>
+            <div className="mx-auto max-w-7xl px-6 md:px-0">
+                {/* Marquee contextual */}
 
                 {/* Título principal */}
                 <h3 className="mb-2 text-5xl font-bold italic tracking-tight text-orange-500  md:text-7xl lg:text-8xl xl:text-9xl">Como Te Pido</h3>

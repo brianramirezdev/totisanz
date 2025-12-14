@@ -13,7 +13,7 @@ const products = [
 
 export default function MerchSection() {
     return (
-        <section id="merch" className="bg-gray-50 px-6 py-20 md:py-32 m-4 rounded border border-gray-200">
+        <section id="merch" className="bg-gray-50 px-6 py-8 md:py-16 m-4 rounded border border-gray-200">
             <div className="mx-auto max-w-7xl">
                 <h2 className="mb-4 text-6xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">MERCH</h2>
                 <p className="mb-16 text-2xl text-gray-400 md:text-3xl">Colección 2026</p>

@@ -16,9 +16,9 @@ const communityPhotos = [
 
 export default function CommunitySection() {
     return (
-        <section id="comunidad" className="bg-white px-6 py-20 text-black md:py-32">
+        <section id="comunidad" className="bg-white px-6 py-6 text-black md:py-16">
             <div className="mx-auto max-w-7xl">
-                <div className="mb-16">
+                <div className="mb-8 md:mb-16">
                     <h2 className="mb-4 text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">COMUNIDAD</h2>
                     <p className="text-xl text-gray-500 md:text-2xl">Fotos con los fans y el público</p>
                 </div>

@@ -9,12 +9,12 @@ export default function AlbumSection() {
     return (
         <section id="album" className="bg-linear-to-b from-zinc-900 to-black px-6 py-8 text-white md:py-16 lg:py-24 rounded m-4 lg:m-8">
             <div className="mx-auto max-w-7xl overflow-hidden">
-                <div className="flex w-max animate-[marquee_40s_linear_infinite] mb-16">
-                    <h2 className="text-nowrap text-6xl font-bold md:text-7xl lg:text-8xl xl:text-9xl">ÁLBUM * ÁLBUM * ÁLBUM * ÁLBUM *&nbsp;</h2>
-                    <h2 className="text-nowrap text-6xl font-bold md:text-7xl lg:text-8xl xl:text-9xl">ÁLBUM * ÁLBUM * ÁLBUM * ÁLBUM *&nbsp;</h2>
+                <div className="flex w-max animate-[marquee_40s_linear_infinite] mb-8 md:mb-16">
+                    <h2 className="text-nowrap text-6xl font-bold md:text-7xl lg:text-8xl xl:text-9xl">ÁLBUM ∗ ÁLBUM ∗ ÁLBUM ∗ ÁLBUM ∗&nbsp;</h2>
+                    <h2 className="text-nowrap text-6xl font-bold md:text-7xl lg:text-8xl xl:text-9xl">ÁLBUM ∗ ÁLBUM ∗ ÁLBUM ∗ ÁLBUM ∗&nbsp;</h2>
                 </div>
 
-                <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+                <div className="grid gap-6 lg:grid-cols-2 lg:gap-16">
                     {/* Portada del álbum */}
                     <div className="flex ">
                         <div className="relative aspect-square w-full max-w-xl overflow-hidden rounded-lg shadow-2xl ring-4 ring-white/10">
