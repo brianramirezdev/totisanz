@@ -1,11 +1,18 @@
 import Image from 'next/image';
 import BookButton from './BookButton';
+import CircularText from './ui/circular-text';
+import { ArrowDown } from 'lucide-react';
+import Link from 'next/link';
 
 export default function HeroSection() {
     return (
         <section id="inicio" className="relative min-h-screen w-full overflow-hidden bg-black">
             {/* Botón reservar */}
-            <BookButton />
+            {/* <BookButton /> */}
+            <Link href="#contacto" className="absolute z-10 bottom-48 left-1/2 -translate-x-1/2 md:bottom-20 md:left-auto md:right-20 md:translate-x-0">
+                <CircularText text="TITO*SANZ*RESÉRVAME*" onHover="slowDown" spinDuration={20} />
+                <ArrowDown className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white size-10" />
+            </Link>
 
             {/* Imagen de fondo */}
             <div className="absolute inset-0">
