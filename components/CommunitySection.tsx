@@ -22,12 +22,14 @@ const communityPhotos = [
 
 export default function CommunitySection() {
     return (
-        <section id="comunidad" className="bg-white px-6 py-6 text-black md:py-16">
-            <div className="mx-auto max-w-7xl">
-                <div className="mb-8 md:mb-16">
-                    <h2 className="mb-4 text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">COMUNIDAD</h2>
+        <section id="comunidad" className="bg-white px-6 py-12 md:py-20 text-black">
+            <div className="mx-auto flex max-w-7xl flex-col gap-12 md:gap-20">
+                {/* Título */}
+                <div className="flex flex-col gap-4">
+                    <h2 className="text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">COMUNIDAD</h2>
                 </div>
 
+                {/* Galería */}
                 <div className="h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                     <Masonry
                         items={communityPhotos}
@@ -42,11 +44,12 @@ export default function CommunitySection() {
                     />
                 </div>
 
-                {/* CTA para compartir fotos */}
-                <div className="mt-20 text-center">
-                    <div className="mx-auto max-w-2xl">
-                        <h3 className="mb-4 text-2xl font-bold md:text-3xl">¿Tienes una foto con Toti?</h3>
-                        <p className="mb-6 text-gray-500">
+                {/* CTA */}
+                <div className="flex justify-center">
+                    <div className="flex max-w-2xl flex-col items-center gap-6 text-center">
+                        <h3 className="text-2xl font-bold md:text-3xl">¿Tienes una foto con Toti?</h3>
+
+                        <p className="text-gray-500">
                             Comparte tu momento con nosotros usando el hashtag
                             <span className="ml-1 font-bold text-orange-500">#TotiSanzFans</span>
                         </p>
@@ -59,7 +62,7 @@ export default function CommunitySection() {
                                 className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-700 transition-all hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
                             >
                                 Etiquétanos en Instagram
-                                <SiInstagram className="ml-2 h-6 w-6" />
+                                <SiInstagram className="h-6 w-6" />
                             </a>
                         </div>
                     </div>
