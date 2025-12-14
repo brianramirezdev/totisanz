@@ -60,7 +60,7 @@ export default function HeroSection() {
 
             <div className="absolute top-24 left-0 z-10 flex w-full flex-col items-center gap-4 px-6 sm:top-28 md:top-32 md:flex-row md:items-start md:justify-between md:px-16">
                 {/* TEXTO – nombre */}
-                <h1 className="text-white font-extrabold tracking-tight leading-none text-5xl md:text-6xl lg:text-7xl">TOTI SANZ</h1>
+                <h1 className="text-white font-extrabold tracking-tight leading-none text-5xl md:text-6xl lg:text-7xl xl:text-8xl">TOTI SANZ</h1>
 
                 {/* Quote móvil */}
                 <p className="max-w-xs text-center text-sm italic text-white/80 md:hidden">“Escribo sobre lo que siento, sobre mis vivencias.”</p>
