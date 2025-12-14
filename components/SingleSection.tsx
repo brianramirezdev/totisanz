@@ -38,14 +38,14 @@ export default function SingleSection() {
                         className="gap-2 border-2 transition-all hover:scale-105 hover:border-green-500 hover:bg-green-50 hover:text-green-600"
                         asChild
                     >
-                        <Link href="https://open.spotify.com/intl-es/artist/0RWI1GOUTOVYETw5uVKmRC?nd=1&dlsi=22453915d95b41a1" target="_blank" rel="noopener noreferrer">
+                        <Link href="https://open.spotify.com/intl-es/track/3dpfkFjhgLy1YUYqsJyZca" target="_blank" rel="noopener noreferrer">
                             <SiSpotify className="h-5 w-5" />
                             Escuchar en Spotify
                         </Link>
                     </Button>
 
                     <Button variant="outline" size="lg" className="gap-2 border-2 transition-all hover:scale-105 hover:border-red-500 hover:bg-red-50 hover:text-red-600" asChild>
-                        <Link href="https://www.youtube.com/@TotiSanz" target="_blank" rel="noopener noreferrer">
+                        <Link href="https://www.youtube.com/watch?v=ZVOvuItRNvs" target="_blank" rel="noopener noreferrer">
                             <SiYoutube className="h-5 w-5" />
                             Ver en YouTube
                         </Link>

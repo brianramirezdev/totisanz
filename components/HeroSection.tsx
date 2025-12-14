@@ -3,6 +3,30 @@ import BookButton from './BookButton';
 import CircularText from './ui/circular-text';
 import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
+import { SiInstagram, SiYoutube, SiSpotify, SiTiktok } from '@icons-pack/react-simple-icons';
+
+const socialLinks = [
+    {
+        name: 'Instagram',
+        href: 'https://www.instagram.com/toti.sanz/',
+        icon: SiInstagram,
+    },
+    {
+        name: 'YouTube',
+        href: 'https://www.youtube.com/@TotiSanz',
+        icon: SiYoutube,
+    },
+    {
+        name: 'Spotify',
+        href: 'https://open.spotify.com/intl-es/artist/0RWI1GOUTOVYETw5uVKmRC',
+        icon: SiSpotify,
+    },
+    {
+        name: 'TikTok',
+        href: 'https://www.tiktok.com/@toti.sanz',
+        icon: SiTiktok,
+    },
+];
 
 export default function HeroSection() {
     return (
@@ -13,6 +37,21 @@ export default function HeroSection() {
                 <CircularText text="TITO*SANZ*RESÉRVAME*" onHover="slowDown" spinDuration={20} />
                 <ArrowDown className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white size-10" />
             </Link>
+
+            <div className="hidden absolute bottom-48 right-1/2 z-10 w-fit -translate-x-1/2 rounded bg-white/90 px-2 py-1 shadow-lg backdrop-blur md:bottom-20 md:left-20 md:translate-x-0 md:flex gap-3">
+                {socialLinks.map((social) => (
+                    <a
+                        key={social.name}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={social.name}
+                        className="group flex size-10 items-center justify-center rounded-full text-zinc-700 transition-all duration-300 hover:-translate-y-1  hover:text-orange-500 md:size-14"
+                    >
+                        <social.icon className="size-6 transition-transform duration-300 group-hover:scale-110 md:size-7" />
+                    </a>
+                ))}
+            </div>
 
             {/* Imagen de fondo */}
             <div className="absolute inset-0">
