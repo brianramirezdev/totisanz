@@ -26,14 +26,14 @@ const musicLinks = [
 
 export default function SingleSection() {
     return (
-        <section id="single" className="bg-white md:px-0 py-8 md:py- overflow-hidden">
+        <section id="single" className="bg-white md:px-0 py-8 md:py-16 overflow-hidden">
             <div className="mt-8 mb-12 md:mb-20 border-t border-b border-gray-900 py-4 md:py-6">
                 <div className="flex animate-[marquee_40s_linear_infinite] select-none">
                     <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗&nbsp;</h2>
                     <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗&nbsp;</h2>
                 </div>
             </div>
-            <div className="mx-auto max-w-7xl px-6 md:px-0">
+            <div className="mx-auto max-w-7xl px-6 2xl:px-0">
                 {/* Marquee contextual */}
 
                 {/* Título principal */}
@@ -54,9 +54,14 @@ export default function SingleSection() {
                         <AudioPlayer src="/audios/toti-voice-note.mp3" showLinks />
                     </div> */}
 
-                    <div className="flex flex-col gap-3">
+                    <div className="grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-3 w-full">
                         {musicLinks.map(({ id, href, label, icon }) => (
-                            <Button key={id} variant="outline" asChild className="gap-2 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500">
+                            <Button
+                                key={id}
+                                variant="outline"
+                                asChild
+                                className="gap-2 md:h-12 w-full transition-all hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
+                            >
                                 <Link href={href} target="_blank" rel="noopener noreferrer">
                                     {icon}
                                     {label}

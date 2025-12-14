@@ -1,5 +1,7 @@
 import { SiInstagram, SiYoutube, SiSpotify, SiTiktok } from '@icons-pack/react-simple-icons';
 import Link from 'next/link';
+import Image from 'next/image';
+import EgregorLogo from './ui/egregor-logo';
 
 const socialLinks = [
     {
@@ -104,6 +106,19 @@ export default function Footer() {
                         </Link>
                     </div>
                 </div>
+                {/* ── Credits ── */}
+                <Link
+                    href="https://www.instagram.com/egregor.studio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-md mx-auto uppercase tracking-[0.25em] text-xs md:text-base mt-28 w-fit flex flex-col items-center justify-center gap-4 text-gray-500 hover:text-gray-300 transition-colors"
+                >
+                    <div className="flex gap-2">
+                        <span>creado por</span>
+                        <span className="font-bold">egregor studio</span>
+                    </div>
+                    <EgregorLogo className="size-8 opacity-70" />
+                </Link>
             </div>
         </footer>
     );
