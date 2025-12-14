@@ -13,7 +13,7 @@ export default function SingleSection() {
                 {/* Marquee contextual */}
 
                 {/* Título principal */}
-                <h3 className="mb-2 text-5xl font-bold italic tracking-tight text-orange-500  md:text-7xl lg:text-8xl xl:text-9xl">Como Te Pido</h3>
+                <h3 className="mb-2 text-5xl font-bold italic tracking-tight text-orange-500  md:text-7xl lg:text-8xl">Como Te Pido</h3>
 
                 {/* Video */}
                 <div className="overflow-hidden rounded-xl shadow-lg mb-10">

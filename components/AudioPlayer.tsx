@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
-import { SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
+import { SiApplemusic, SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
 import Link from 'next/link';
 
 interface AudioPlayerProps {
@@ -13,6 +13,7 @@ interface AudioPlayerProps {
     showLinks?: boolean;
     spotifyUrl?: string;
     youtubeUrl?: string;
+    appleMusicUrl?: string;
 }
 
 export default function AudioPlayer({
@@ -21,6 +22,7 @@ export default function AudioPlayer({
     showLinks = false,
     spotifyUrl = 'https://open.spotify.com/intl-es/track/3dpfkFjhgLy1YUYqsJyZca',
     youtubeUrl = 'https://www.youtube.com/watch?v=ZVOvuItRNvs',
+    appleMusicUrl = 'https://music.apple.com/es/artist/toti-sanz/1718940361',
 }: AudioPlayerProps) {
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -127,7 +129,7 @@ export default function AudioPlayer({
             </div>
 
             {showLinks && (
-                <div className="flex flex-col gap-3 sm:flex-row">
+                <div className="flex flex-col gap-3">
                     <Button variant="outline" asChild className="gap-2 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500">
                         <Link href={spotifyUrl} target="_blank">
                             <SiSpotify /> Spotify
@@ -136,6 +138,11 @@ export default function AudioPlayer({
                     <Button variant="outline" asChild className="gap-2 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500">
                         <Link href={youtubeUrl} target="_blank">
                             <SiYoutube /> YouTube
+                        </Link>
+                    </Button>
+                    <Button variant="outline" asChild className="gap-2 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500">
+                        <Link href={youtubeUrl} target="_blank">
+                            <SiApplemusic /> Apple Music
                         </Link>
                     </Button>
                 </div>
