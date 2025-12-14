@@ -41,13 +41,9 @@ export default function AlbumSection() {
                         </div>
 
                         {/* Botón de Spotify */}
-                        <Button
-                            size="lg"
-                            className="w-full gap-3 bg-green-500 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-green-600 md:w-auto"
-                            asChild
-                        >
+                        <Button size="lg" className="w-full gap-3 bg-green-500 text-lg h-12 font-semibold text-white transition-all hover:bg-green-600 md:w-auto" asChild>
                             <Link href="https://open.spotify.com/intl-es/artist/0RWI1GOUTOVYETw5uVKmRC?nd=1&dlsi=22453915d95b41a1" target="_blank" rel="noopener noreferrer">
-                                <SiSpotify className="h-6 w-6" />
+                                <SiSpotify className="size-6" />
                                 Descúbrelo
                             </Link>
                         </Button>
