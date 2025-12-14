@@ -45,7 +45,7 @@ export default function CommunitySection() {
                 </div>
 
                 {/* CTA */}
-                <div className="flex justify-center">
+                <div className="flex justify-center my-8">
                     <div className="flex max-w-2xl flex-col items-center gap-6 text-center">
                         <h3 className="text-2xl font-bold md:text-3xl">¿Tienes una foto con Toti?</h3>
 

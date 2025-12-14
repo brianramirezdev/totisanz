@@ -15,7 +15,7 @@ export default function ConcertsSection() {
         <section id="conciertos" className="bg-gray-50 border-t border-b border-gray-200 px-4 py-8 sm:px-6 md:py-16">
             <div className="mx-auto max-w-7xl">
                 <div className="mb-6 md:mb-12 flex flex-col sm:flex-row items-start sm:items-end gap-2 sm:gap-6">
-                    <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight">CONCIERTOS </h2>
+                    <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight">CONCIERTOS </h2>
                     <span className="hidden sm:block text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-gray-300">∗ </span>
                     <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-gray-300">2026</h3>
                 </div>
