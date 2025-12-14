@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
 import Link from 'next/link';
+import AudioPlayer from './AudioPlayer';
 
 export default function SingleSection() {
     return (
@@ -17,10 +18,37 @@ export default function SingleSection() {
                 {/* Audio nativo con estilo personalizado */}
                 <div className="mb-8 md:mb-12">
                     <p className="mb-3 text-sm font-medium uppercase tracking-wide text-gray-600">Escucha a Toti hablar sobre el single</p>
-                    <audio controls className="w-full" preload="metadata">
-                        <source src="/audio/toti-voice-note.mp3" type="audio/mpeg" />
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
+
+                    <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-8">
+                        <AudioPlayer src="/audios/toti-voice-note.mp3" showLinks />
+
+                        {/* Botones streaming */}
+                        {/* <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+                            <Button
+                                variant="ghost"
+                                size="lg"
+                                className="w-full sm:w-auto gap-2 transition-all hover:scale-105 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
+                                asChild
+                            >
+                                <Link href="https://open.spotify.com/intl-es/track/3dpfkFjhgLy1YUYqsJyZca" target="_blank" rel="noopener noreferrer">
+                                    <SiSpotify className="size-5" />
+                                    Escuchar en Spotify
+                                </Link>
+                            </Button>
+
+                            <Button
+                                variant="ghost"
+                                size="lg"
+                                className="w-full sm:w-auto gap-2 transition-all hover:scale-105 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
+                                asChild
+                            >
+                                <Link href="https://www.youtube.com/watch?v=ZVOvuItRNvs" target="_blank" rel="noopener noreferrer">
+                                    <SiYoutube className="size-5" />
+                                    Ver en YouTube
+                                </Link>
+                            </Button>
+                        </div> */}
+                    </div>
                 </div>
 
                 {/* Video */}
@@ -28,28 +56,6 @@ export default function SingleSection() {
                     <div className="aspect-video">
                         <iframe src="https://www.youtube.com/embed/ZVOvuItRNvs" className="h-full w-full" allowFullScreen title="Como Te Pido - Toti Sanz" />
                     </div>
-                </div>
-
-                {/* Botones de streaming */}
-                <div className="flex flex-wrap gap-4">
-                    <Button
-                        variant="outline"
-                        size="lg"
-                        className="gap-2 border-2 transition-all hover:scale-105 hover:border-green-500 hover:bg-green-50 hover:text-green-600"
-                        asChild
-                    >
-                        <Link href="https://open.spotify.com/intl-es/track/3dpfkFjhgLy1YUYqsJyZca" target="_blank" rel="noopener noreferrer">
-                            <SiSpotify className="h-5 w-5" />
-                            Escuchar en Spotify
-                        </Link>
-                    </Button>
-
-                    <Button variant="outline" size="lg" className="gap-2 border-2 transition-all hover:scale-105 hover:border-red-500 hover:bg-red-50 hover:text-red-600" asChild>
-                        <Link href="https://www.youtube.com/watch?v=ZVOvuItRNvs" target="_blank" rel="noopener noreferrer">
-                            <SiYoutube className="h-5 w-5" />
-                            Ver en YouTube
-                        </Link>
-                    </Button>
                 </div>
             </div>
         </section>
