@@ -42,10 +42,23 @@ export default function ConcertsSection() {
                                 key={index}
                                 className="group flex flex-col gap-4 border-b border-gray-200 py-5 transition-all hover:border-orange-500 sm:flex-row sm:items-center sm:justify-between"
                             >
-                                {/* Fecha */}
-                                <div className="flex items-baseline gap-2 sm:gap-3 sm:min-w-40">
-                                    <span className="text-3xl font-bold tabular-nums sm:text-4xl md:text-5xl">{concert.date}</span>
-                                    <span className="text-xs font-medium uppercase text-gray-500 sm:text-sm">{concert.month}</span>
+                                {/* Fila superior en móvil: fecha + comprar */}
+                                <div className="flex items-center justify-between sm:block sm:justify-start">
+                                    {/* Fecha */}
+                                    <div className="flex items-baseline gap-2 sm:gap-3 sm:min-w-40">
+                                        <span className="text-3xl font-bold tabular-nums sm:text-4xl md:text-5xl">{concert.date}</span>
+                                        <span className="text-xs font-medium uppercase text-gray-500 sm:text-sm">{concert.month}</span>
+                                    </div>
+
+                                    {/* Botón móvil */}
+                                    <div className="sm:hidden">
+                                        <Button
+                                            variant="ghost"
+                                            className="px-0 font-semibold text-gray-900 transition-all hover:bg-transparent hover:text-orange-500 hover:underline hover:underline-offset-4"
+                                        >
+                                            COMPRAR
+                                        </Button>
+                                    </div>
                                 </div>
 
                                 {/* Info */}
@@ -57,8 +70,8 @@ export default function ConcertsSection() {
                                     </p>
                                 </div>
 
-                                {/* Botón */}
-                                <div className="pt-2 sm:pt-0">
+                                {/* Botón desktop */}
+                                <div className="hidden sm:block">
                                     <Button
                                         variant="ghost"
                                         className="px-0 font-semibold text-gray-900 transition-all hover:bg-transparent hover:text-orange-500 hover:underline hover:underline-offset-4"

@@ -4,11 +4,11 @@ import { Lock, ShoppingBag } from 'lucide-react';
 import Image from 'next/image';
 
 const products = [
-    { id: 1, name: 'Álbum Oficial', price: '25€', image: '/images/album.webp', available: true, date: '14.02' },
-    { id: 2, name: 'Gorra Oficial', price: '20€', image: '/images/merch/product-2.jpg', available: false, date: '21.03' },
-    { id: 3, name: 'Sudadera Oficial', price: '40€', image: '/images/merch/product-3.jpg', available: false, date: '05.05' },
-    { id: 4, name: 'Póster Edición Limitada', price: '15€', image: '/images/merch/product-4.jpg', available: false, date: '18.07' },
-    { id: 5, name: 'Llaveros Oficiales', price: '10€', image: '/images/merch/product-5.jpg', available: false, date: '30.08' },
+    { id: 1, name: 'Álbum Oficial', price: '25', image: '/images/album.webp', available: true, date: '14.02' },
+    { id: 2, name: 'Gorra Oficial', price: '20', image: '/images/merch/product-2.jpg', available: false, date: '21.03' },
+    { id: 3, name: 'Sudadera Oficial', price: '40', image: '/images/merch/product-3.jpg', available: false, date: '05.05' },
+    { id: 4, name: 'Póster Edición Limitada', price: '15', image: '/images/merch/product-4.jpg', available: false, date: '18.07' },
+    { id: 5, name: 'Llaveros Oficiales', price: '10', image: '/images/merch/product-5.jpg', available: false, date: '30.08' },
 ];
 
 export default function MerchSection() {
@@ -33,8 +33,8 @@ export default function MerchSection() {
                                 <div key={product.id} className="flex min-w-28 flex-col items-center select-none">
                                     {/* Punto */}
                                     <div
-                                        className={`relative z-10 h-4 w-4 rounded-full border-2 border-white ${
-                                            product.available ? 'bg-orange-500 ring-4 ring-orange-500/20' : 'bg-gray-300'
+                                        className={`relative z-10 h-4 w-4 rounded-full border-2 border-gray-50 ${
+                                            product.available ? 'bg-orange-500 ring-4 ring-orange-500/20 border-orange-200' : 'bg-gray-300'
                                         }`}
                                     />
 
@@ -68,27 +68,28 @@ export default function MerchSection() {
                                     />
 
                                     {!product.available && (
-                                        <div className="absolute inset-0 flex items-center justify-center bg-linear-to-b from-zinc-800 to-black ">
-                                            <p className="text-2xl font-bold text-white">Próximamente</p>
+                                        <div className="absolute inset-0 flex items-center justify-center bg-linear-to-b from-zinc-700 to-black ">
+                                            {/* <p className="text-2xl font-bold text-white">Próximamente</p> */}
+                                            <Lock className="size-8 text-white" />
                                         </div>
                                     )}
                                 </div>
 
-                                <div className="p-5">
+                                <div className="p-5 flex flex-col">
                                     <h3 className="mb-1 text-lg font-bold">{product.available ? product.name : 'Próximamente'}</h3>
+                                    <div className="flex items-end justify-between">
+                                        <p className="text-base text-gray-600">{product.available ? product.price + ' €' : '-'}</p>
 
-                                    <p className="mb-3 text-base text-gray-600">{product.available ? product.price : '-'}</p>
-
-                                    {product.available ? (
-                                        <Button size="sm" className="w-full gap-2 bg-orange-500 font-semibold transition-all hover:bg-orange-600">
-                                            <ShoppingBag className="h-4 w-4" />
-                                            Comprar
-                                        </Button>
-                                    ) : (
-                                        <Button size="sm" variant="ghost" disabled className="w-full mt-auto text-gray-400 bg-gray-200">
-                                            <Lock className="h-4 w-4" />
-                                        </Button>
-                                    )}
+                                        {product.available ? (
+                                            <Button size="sm" className=" gap-2 bg-orange-500 font-semibold transition-all hover:bg-orange-600">
+                                                <ShoppingBag className="size-4" />
+                                            </Button>
+                                        ) : (
+                                            <Button size="sm" variant="ghost" disabled className="mt-auto text-gray-400 bg-gray-200">
+                                                <Lock className="size-4" />
+                                            </Button>
+                                        )}
+                                    </div>
                                 </div>
                             </CardContent>
                         </Card>
