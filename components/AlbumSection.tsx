@@ -3,7 +3,7 @@ import { SiSpotify } from '@icons-pack/react-simple-icons';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const tracks = ['como te pido', 'no pares', 'perdimos el control', 'volveré', 'tu nombre'];
+const tracks = ['Como te pido', 'No pares', 'Perdimos el control', 'Volveré', 'Tu nombre'];
 
 export default function AlbumSection() {
     return (
