@@ -96,7 +96,7 @@ export default function AudioPlayer({
     };
 
     return (
-        <div className="w-full space-y-6 flex flex-col md:flex-row justify-between gap-4">
+        <div className="w-full space-y-2 flex flex-col md:flex-row justify-between gap-2 h-fit">
             <div className="rounded-lg border border-gray-200 w-full max-w-2xl shadow-sm p-6 pt-8">
                 <audio ref={audioRef} src={src} preload="metadata" />
 

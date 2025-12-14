@@ -20,7 +20,6 @@ export default function CommunitySection() {
             <div className="mx-auto max-w-7xl">
                 <div className="mb-8 md:mb-16">
                     <h2 className="mb-4 text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">COMUNIDAD</h2>
-                    <p className="text-xl text-gray-500 md:text-2xl">Fotos con los fans y el público</p>
                 </div>
 
                 <div className="h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">

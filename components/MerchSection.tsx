@@ -15,8 +15,10 @@ export default function MerchSection() {
     return (
         <section id="merch" className="bg-gray-50 px-6 py-8 md:py-16 m-4 rounded border border-gray-200">
             <div className="mx-auto max-w-7xl">
-                <h2 className="mb-4 text-6xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">MERCH</h2>
-                <p className="mb-16 text-2xl text-gray-400 md:text-3xl">Colección 2026</p>
+                <div className="mb-8 md:mb-20 flex flex-col items-start">
+                    <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight">MERCH </h2>
+                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-300 uppercase">Colección 2026</h3>
+                </div>
 
                 {/* ───────────────── Timeline ───────────────── */}
                 <div className="relative mb-20 overflow-x-auto scroll-smooth">
