@@ -6,9 +6,13 @@ export default function SingleSection() {
             <div className="mx-auto max-w-7xl overflow-hidden">
                 {/* Marquee contextual */}
                 <div className="mt-8 mb-12 border-t border-b border-gray-900 py-4 md:py-6">
-                    <div className="flex w-max gap-12 animate-[marquee_90s_linear_infinite] select-none">
-                        <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">SINGLE * NOVEDAD * SINGLE * NOVEDAD *</h2>
-                        <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">SINGLE * NOVEDAD * SINGLE * NOVEDAD *</h2>
+                    <div className="flex w-max animate-[marquee_60s_linear_infinite] select-none">
+                        <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">
+                            SINGLE * NOVEDAD * SINGLE * NOVEDAD *&nbsp;
+                        </h2>
+                        <h2 className="text-nowrap text-3xl font-bold tracking-tight text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">
+                            SINGLE * NOVEDAD * SINGLE * NOVEDAD *&nbsp;
+                        </h2>
                     </div>
                 </div>
 
