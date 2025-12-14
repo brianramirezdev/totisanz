@@ -34,7 +34,7 @@ export default function HeroSection() {
             {/* Botón reservar */}
             {/* <BookButton /> */}
             <Link href="#contacto" className="absolute z-10 bottom-48 left-1/2 -translate-x-1/2 md:bottom-20 md:left-auto md:right-20 md:translate-x-0">
-                <CircularText text="TITO*SANZ*RESÉRVAME*" onHover="slowDown" spinDuration={20} />
+                <CircularText text="TOTI*SANZ*RESÉRVAME*" onHover="slowDown" spinDuration={20} />
                 <ArrowDown className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white size-10" />
             </Link>
 

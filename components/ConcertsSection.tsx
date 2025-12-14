@@ -14,9 +14,11 @@ export default function ConcertsSection() {
     return (
         <section id="conciertos" className="bg-gray-50 border-t border-b border-gray-200 px-4 py-8 sm:px-6 md:py-16">
             <div className="mx-auto max-w-7xl">
-                <h2 className="mb-4 text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">CONCIERTOS</h2>
+                <div>
+                    <h2 className="mb-4 text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">CONCIERTOS</h2>
 
-                <p className="mb-12 text-lg text-gray-400 sm:text-xl md:mb-16 md:text-3xl">2026</p>
+                    <h3 className="mb-12 text-lg text-gray-400 sm:text-xl md:mb-16 md:text-3xl">2026</h3>
+                </div>
 
                 <div className="grid gap-12 lg:gap-16">
                     {/* Video lateral */}
