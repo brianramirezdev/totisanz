@@ -21,12 +21,14 @@ const SPEED_CLASS_MAP: Record<NonNullable<MarqueeProps['speed']>, string> = {
 
 const Marquee: React.FC<MarqueeProps> = ({ text, className = '', itemClassName = '', repeat = 2, border, speed = 'normal', dark, xl, reverse }) => {
     return (
-        <div className={`overflow-hidden ${border && `border-y ${dark ? 'border-gray-50' : 'border-gray-900'}`} ${className} py-4 md:py-6`}>
+        <div className={`overflow-hidden ${border && `border-y py-4 md:py-6 ${dark ? 'border-gray-50' : 'border-gray-900'}`} ${className} `}>
             <div className={`flex w-max ${SPEED_CLASS_MAP[speed]} ${reverse && 'animate-marquee-reverse'}`}>
                 {Array.from({ length: repeat }).map((_, i) => (
                     <h2
                         key={i}
-                        className={`text-nowrap font-bold text-4xl md:text-7xl lg:text-8xl ${xl && 'xl:text-9xl'}  ${dark ? 'text-gray-50' : 'text-gray-900'} ${itemClassName}`}
+                        className={`text-nowrap font-bold text-4xl md:text-7xl lg:text-8xl ${xl && 'text-6xl xl:text-9xl'}  ${
+                            dark ? 'text-gray-50' : 'text-gray-900'
+                        } ${itemClassName}`}
                     >
                         {text}&nbsp;
                     </h2>
