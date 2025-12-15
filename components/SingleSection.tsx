@@ -1,4 +1,3 @@
-import AudioPlayer from '@/components/AudioPlayer';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import { SiApplemusic, SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
@@ -46,14 +45,7 @@ export default function SingleSection() {
                     </div>
                 </div>
 
-                {/* Audio */}
                 <div className="mb-12 md:mb-16">
-                    {/* <p className="mb-3 text-sm font-medium uppercase tracking-wide text-gray-600">Escucha a Toti hablar sobre el single</p> */}
-
-                    {/* <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-8">
-                        <AudioPlayer src="/audios/toti-voice-note.mp3" showLinks />
-                    </div> */}
-
                     <div className="grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-3 w-full">
                         {musicLinks.map(({ id, href, label, icon }) => (
                             <Button
@@ -73,35 +65,4 @@ export default function SingleSection() {
             </div>
         </section>
     );
-}
-
-{
-    /* Botones streaming */
-}
-{
-    /* <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-                            <Button
-                                variant="ghost"
-                                size="lg"
-                                className="w-full sm:w-auto gap-2 transition-all hover:scale-105 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
-                                asChild
-                            >
-                                <Link href="https://open.spotify.com/intl-es/track/3dpfkFjhgLy1YUYqsJyZca" target="_blank" rel="noopener noreferrer">
-                                    <SiSpotify className="size-5" />
-                                    Escuchar en Spotify
-                                </Link>
-                            </Button>
-
-                            <Button
-                                variant="ghost"
-                                size="lg"
-                                className="w-full sm:w-auto gap-2 transition-all hover:scale-105 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
-                                asChild
-                            >
-                                <Link href="https://www.youtube.com/watch?v=ZVOvuItRNvs" target="_blank" rel="noopener noreferrer">
-                                    <SiYoutube className="size-5" />
-                                    Ver en YouTube
-                                </Link>
-                            </Button>
-                        </div> */
 }
