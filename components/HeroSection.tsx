@@ -29,8 +29,8 @@ export default function HeroSection() {
 
             <div className="grid min-h-svh w-screen grid-cols-1 grid-rows-[auto,1fr,auto] px-6 pt-24 pb-6 md:px-14 lg:px-24 md:pt-32 md:pb-24 md:grid-cols-2 md:grid-rows-2">
                 {/* Nombre */}
-                <div className="hero-item z-10 max-w-xs md:max-w-xl gap-2 flex flex-col mx-auto md:mx-0 h-fit">
-                    <h1 className="text-white font-extrabold tracking-tight leading-none text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-center md:text-left">TOTI SANZ</h1>
+                <div className="hero-item z-10 max-w-xs md:max-w-full gap-2 flex flex-col mx-auto md:mx-0 h-fit">
+                    <h1 className="text-white font-extrabold tracking-tight leading-none text-5xl md:text-6xl lg:text-8xl xl:text-9xl text-center md:text-left">TOTI SANZ</h1>
                     <h2 className="text-sm italic text-white/80 md:hidden text-center">“Escribo sobre lo que siento, sobre mis vivencias.”</h2>
                 </div>
 
