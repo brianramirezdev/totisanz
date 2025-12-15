@@ -1,4 +1,4 @@
-// app/page.tsx
+import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import SingleSection from '@/components/SingleSection';
@@ -10,10 +10,14 @@ import ConcertsSection from '@/components/ConcertsSection';
 import MerchSection from '@/components/MerchSection';
 import CommunitySection from '@/components/CommunitySection';
 
-// SEO básico (reemplaza al <head> de Astro)
-export const metadata = {
-    title: 'Toti Sanz - Artista Musical de Lanzarote',
-    description: 'Toti Sanz, cantante y compositor de Lanzarote. Descubre su música, conciertos y contacto.',
+export const metadata: Metadata = {
+    title: 'Artista musical de Lanzarote',
+    description: 'Toti Sanz es un cantante y compositor de Lanzarote. Descubre su música, singles, álbumes, conciertos y contacto.',
+    openGraph: {
+        title: 'Toti Sanz – Artista musical de Lanzarote',
+        description: 'Escucha la música de Toti Sanz, conoce sus conciertos y descubre su último trabajo.',
+        url: 'https://totisanz.com',
+    },
 };
 
 export default function Home() {
