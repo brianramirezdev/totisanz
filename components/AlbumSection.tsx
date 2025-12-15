@@ -19,17 +19,13 @@ export default function AlbumSection() {
     const [hoveredTrack, setHoveredTrack] = useState<number | null>(null);
     const [playingTrack, setPlayingTrack] = useState<number | null>(null);
     const playingRef = useRef<HTMLDivElement | null>(null);
-    const albumRef = useRef<HTMLDivElement | null>(null);
 
-    const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
     const activeTrack = playingTrack !== null ? tracks[playingTrack] : null;
 
     // Click fuera → parar reproducción
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
             if (!playingRef.current) return;
-
-            // Si haces click FUERA del track que suena → parar
             if (!playingRef.current.contains(e.target as Node)) {
                 setPlayingTrack(null);
             }
@@ -47,7 +43,7 @@ export default function AlbumSection() {
                     <h2 className="text-nowrap text-6xl font-bold md:text-7xl lg:text-8xl xl:text-9xl">ÁLBUM ∗ ÁLBUM ∗ ÁLBUM ∗ ÁLBUM ∗&nbsp;</h2>
                 </div>
 
-                <div ref={albumRef} className="grid gap-6 lg:grid-cols-2 lg:gap-16">
+                <div className="grid gap-6 lg:grid-cols-2 lg:gap-16">
                     {/* ── Cover / Video ── */}
                     <div className="flex">
                         <div className="relative aspect-square w-full max-w-xl overflow-hidden rounded-lg shadow-2xl">
@@ -100,7 +96,13 @@ export default function AlbumSection() {
                                         <span className="text-sm font-mono text-gray-500">{String(index + 1).padStart(2, '0')}</span>
                                         <span className="flex-1 text-lg font-medium">{track.name}</span>
 
-                                        {!isPlaying && isHovered && <Play className="size-5" />}
+                                        {!isPlaying && (
+                                            <Play
+                                                className={`size-5 translate-x-10 ${
+                                                    isHovered ? 'group-hover:translate-x-0 transform transition-transform duration-200 ease-in-out' : ''
+                                                }`}
+                                            />
+                                        )}
                                         {isPlaying && <Disc3 className="size-6 animate-spin animation-duration-[5000ms]" />}
                                     </div>
                                 );
