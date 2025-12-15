@@ -63,7 +63,7 @@ export default function HeroSection() {
                 <Link href="#contacto" className="hero-item z-10 place-self-center md:place-self-end md:justify-self-end relative flex items-center justify-center">
                     <div className="relative size-28 flex items-center justify-center">
                         <CircularText text="TOTI*SANZ*RESÉRVAME*" onHover="slowDown" spinDuration={20} />
-                        <ArrowDown className="absolute size-6 text-white" />
+                        <ArrowDown className="absolute size-7 md:size-8 lg:size-9 text-white" />
                     </div>
                 </Link>
             </div>
