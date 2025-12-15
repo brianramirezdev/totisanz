@@ -1,11 +1,32 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { SiSpotify } from '@icons-pack/react-simple-icons';
-import { Disc3, Play } from 'lucide-react';
+import { SiApplemusic, SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
+import { Disc3, MoveRight, MoveUpRight, Play } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+
+const musicLinks = [
+    {
+        id: 'spotify',
+        label: 'Spotify',
+        href: 'https://open.spotify.com/intl-es/album/25HtkUSz3tVzCGjMWJTZiO',
+        icon: <SiSpotify className="size-6" />,
+    },
+    {
+        id: 'youtube',
+        label: 'YouTube',
+        href: 'https://www.youtube.com/watch?v=ZVOvuItRNvs&list=PLRcYtI_WwtdbXre5Toy5dmsNP1c2RyFjo',
+        icon: <SiYoutube className="size-6" />,
+    },
+    {
+        id: 'apple',
+        label: 'Music',
+        href: 'https://music.apple.com/es/album/solo-para-ti-ep/1823152801',
+        icon: <SiApplemusic className="size-6" />,
+    },
+];
 
 const tracks = [
     { name: 'Como te pido', videoId: 'ZVOvuItRNvs', start: 73 },
@@ -109,13 +130,30 @@ export default function AlbumSection() {
                             })}
                         </div>
 
-                        {/* ── Spotify ── */}
-                        <Button size="lg" className="h-12 w-full gap-3 bg-green-500 text-lg font-semibold text-white transition-all hover:bg-green-600 md:w-auto" asChild>
-                            <Link href="https://open.spotify.com/intl-es/artist/0RWI1GOUTOVYETw5uVKmRC" target="_blank" rel="noopener noreferrer">
-                                <SiSpotify className="size-6" />
-                                Descúbrelo
-                            </Link>
-                        </Button>
+                        {/* ── Links ── */}
+                        <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+                            {musicLinks.map(({ id, href, label, icon }) => (
+                                <Button
+                                    key={id}
+                                    variant="outline"
+                                    asChild
+                                    className="group h-12 md:h-14 w-full border transition-all text-black hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500 flex items-center justify-center"
+                                >
+                                    <Link href={href} target="_blank" rel="noopener noreferrer" className="relative w-full h-full flex items-center justify-center overflow-hidden">
+                                        {/* Contenido normal */}
+                                        <div className="flex items-center gap-3 translate-y-0 group-hover:translate-y-10 transform transition-transform duration-200 ease-in-out">
+                                            {icon}
+                                            <span className="hidden sm:inline text-sm lg:text-base font-medium">{label}</span>
+                                        </div>
+
+                                        {/* Icono hover */}
+                                        <div className="absolute inset-0 flex items-center justify-center gap-4 -translate-y-10 group-hover:translate-y-0 transform transition-transform duration-200 ease-in-out">
+                                            <MoveUpRight className="size-5 sm:size-6" />
+                                        </div>
+                                    </Link>
+                                </Button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
