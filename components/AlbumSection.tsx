@@ -92,7 +92,7 @@ export default function AlbumSection() {
                     <div className="flex flex-col justify-center">
                         <div className="mb-8">
                             <h3 className="mb-2 text-5xl font-bold italic md:text-6xl lg:text-7xl">Solo para ti</h3>
-                            <p className="text-xl text-gray-400 md:text-2xl">2026</p>
+                            <p className="text-xl text-gray-400 md:text-2xl">2025</p>
                         </div>
 
                         {/* ── Tracklist ── */}
