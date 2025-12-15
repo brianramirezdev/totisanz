@@ -32,7 +32,7 @@ export default function HeroSection() {
         <section id="inicio" className="relative min-h-screen w-full overflow-hidden bg-black">
             {/* Imagen de fondo */}
             <div className="absolute inset-0">
-                <Image src="/images/hero.jpg" unoptimized alt="Toti Sanz" fill priority sizes="100vw" className="object-cover opacity-85" />
+                <Image src="/images/hero.avif" unoptimized alt="Toti Sanz" fill priority sizes="100vw" className="object-cover opacity-85" />
             </div>
 
             <div className="grid min-h-svh w-screen grid-cols-1 grid-rows-[auto,1fr,auto] px-6 pt-24 pb-6 md:px-14 lg:px-24 md:pt-32 md:pb-24 md:grid-cols-2 md:grid-rows-2">

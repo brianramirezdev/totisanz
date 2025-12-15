@@ -7,19 +7,19 @@ const musicLinks = [
         id: 'spotify',
         label: 'Spotify',
         href: 'https://open.spotify.com/intl-es/track/3dpfkFjhgLy1YUYqsJyZca',
-        icon: <SiSpotify />,
+        icon: <SiSpotify className="size-5" />,
     },
     {
         id: 'youtube',
         label: 'YouTube',
         href: 'https://www.youtube.com/watch?v=ZVOvuItRNvs',
-        icon: <SiYoutube />,
+        icon: <SiYoutube className="size-5" />,
     },
     {
         id: 'apple',
         label: 'Apple Music',
         href: 'https://music.apple.com/es/album/como-te-pido/1718941267?i=1718941268',
-        icon: <SiApplemusic />,
+        icon: <SiApplemusic className="size-5" />,
     },
 ];
 
@@ -52,7 +52,7 @@ export default function SingleSection() {
                                 key={id}
                                 variant="outline"
                                 asChild
-                                className="gap-2 md:h-12 w-full transition-all hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
+                                className="gap-4 md:h-12 w-full transition-all hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
                             >
                                 <Link href={href} target="_blank" rel="noopener noreferrer">
                                     {icon}
