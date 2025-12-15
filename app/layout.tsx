@@ -14,12 +14,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://totisanz.com'),
+    metadataBase: new URL('https://www.totisanz.com'),
     title: {
-        default: 'Toti Sanz',
+        default: 'Toti Sanz | Cantante y compositor de Lanzarote',
         template: '%s | Toti Sanz',
     },
-    description: 'Cantante y compositor de Lanzarote.',
+    description: 'Toti Sanz es cantante y compositor de Lanzarote. Descubre su música, singles, álbumes, conciertos y contacto.',
     icons: {
         icon: [{ url: '/images/favicon/favicon.ico' }, { url: '/images/favicon/favicon.svg', type: 'image/svg+xml' }, { url: '/images/favicon/favicon-96x96.png', sizes: '96x96' }],
         apple: '/images/favicon/apple-touch-icon.png',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'es_ES',
-        url: 'https://totisanz.com',
+        url: 'https://www.totisanz.com',
         siteName: 'Toti Sanz',
         title: 'Toti Sanz – Artista musical',
         description: 'Cantante y compositor de Lanzarote.',
@@ -60,9 +60,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         __html: JSON.stringify({
                             '@context': 'https://schema.org',
                             '@type': 'MusicGroup',
-                            '@id': 'https://totisanz.com/#musician',
+                            '@id': 'https://www.totisanz.com/#musician',
                             name: 'Toti Sanz',
-                            url: 'https://totisanz.com',
+                            url: 'https://www.totisanz.com',
                             genre: ['Pop', 'Pop Latino'],
                             description: 'Toti Sanz es un cantante y compositor de Lanzarote, España.',
                             foundingLocation: {
@@ -80,7 +80,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         }),
                     }}
                 />
-
                 {children}
             </body>
         </html>
