@@ -1,4 +1,4 @@
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SiApplemusic, SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
 
@@ -25,45 +25,50 @@ const musicLinks = [
 
 export default function SingleSection() {
     return (
-        <section id="single" className="bg-white md:px-0 py-8 md:py-16 overflow-hidden">
-            <div className="mt-8 mb-12 md:mb-20 border-t border-b border-gray-900 py-4 md:py-6">
-                {/* <div className="flex animate-[marquee_15s_linear_infinite] select-none">
-                    <h2 className="text-nowrap text-3xl font-bold text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗&nbsp;</h2>
-                    <h2 className="text-nowrap text-3xl font-bold text-black/80 md:text-6xl lg:text-7xl xl:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗&nbsp;</h2>
-                </div> */}
-                <div className="flex w-max animate-[marquee_40s_linear_infinite]">
-                    <h2 className="text-nowrap text-4xl font-bold md:text-7xl lg:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗&nbsp;</h2>
-                    <h2 className="text-nowrap text-4xl font-bold md:text-7xl lg:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗&nbsp;</h2>
+        <section id="single" className="overflow-hidden bg-white py-8 md:py-16">
+            {/* Marquee */}
+            <div className="mb-10 overflow-hidden border-y border-gray-900 py-4 md:mb-12 md:py-6">
+                <div className="flex w-max animate-[marquee_40s_linear_infinite] gap-12">
+                    <h2 className="text-nowrap text-4xl font-bold md:text-7xl lg:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗</h2>
+                    <h2 className="text-nowrap text-4xl font-bold md:text-7xl lg:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗</h2>
                 </div>
             </div>
-            <div className="mx-auto max-w-7xl px-6 2xl:px-0">
-                {/* Marquee contextual */}
 
-                {/* Título principal */}
-                <h3 className="mb-2 text-5xl font-bold  tracking-tight text-orange-500  md:text-7xl lg:text-8xl uppercase">Como Te Pido</h3>
-
-                {/* Video */}
-                <div className="overflow-hidden rounded-xl shadow-lg mb-10">
-                    <div className="aspect-video">
-                        <iframe src="https://www.youtube.com/embed/ZVOvuItRNvs" className="h-full w-full" allowFullScreen title="Como Te Pido - Toti Sanz" />
+            {/* Contenido principal */}
+            <div className="mx-auto max-w-7xl px-6 2xl:px-0 py-12 md:py-24">
+                <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[1.5fr_1fr] lg:gap-12">
+                    {/* Video */}
+                    <div className="overflow-hidden rounded-xl shadow-2xl">
+                        <div className="aspect-video">
+                            <iframe src="https://www.youtube.com/embed/ZVOvuItRNvs" className="h-full w-full" allowFullScreen title="Como Te Pido - Toti Sanz" />
+                        </div>
                     </div>
-                </div>
 
-                <div className="mb-12 md:mb-16">
-                    <div className="grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-3 w-full">
-                        {musicLinks.map(({ id, href, label, icon }) => (
-                            <Button
-                                key={id}
-                                variant="outline"
-                                asChild
-                                className="gap-4 md:h-12 w-full transition-all hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
-                            >
-                                <Link href={href} target="_blank" rel="noopener noreferrer">
-                                    {icon}
-                                    {label}
-                                </Link>
-                            </Button>
-                        ))}
+                    {/* Contenido lateral */}
+                    <div className="flex flex-col gap-8 lg:justify-center">
+                        {/* Título */}
+                        <div>
+                            <h3 className="text-5xl font-bold uppercase tracking-tight text-orange-500 md:text-6xl lg:text-5xl xl:text-6xl">Como Te Pido</h3>
+                            <p className="mt-3 text-lg text-gray-600">Nuevo single 2025</p>
+                        </div>
+
+                        {/* Links - Responsive */}
+                        <div className="grid grid-cols-3 gap-3 lg:flex lg:flex-col lg:gap-4">
+                            {musicLinks.map(({ id, href, label, icon }) => (
+                                <Button
+                                    key={id}
+                                    variant="outline"
+                                    size="lg"
+                                    asChild
+                                    className="h-12 w-full gap-2 border-2 transition-all hover:scale-105 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500 lg:h-14 lg:justify-start lg:gap-4 lg:text-base lg:font-semibold"
+                                >
+                                    <Link href={href} target="_blank" rel="noopener noreferrer">
+                                        {icon}
+                                        <span className="hidden md:inline lg:inline">{label}</span>
+                                    </Link>
+                                </Button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
