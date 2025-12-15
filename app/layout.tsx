@@ -52,7 +52,37 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="es">
-            <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>{children}</body>
+            <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
+                {/* Schema.org JSON-LD */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'MusicGroup',
+                            '@id': 'https://totisanz.com/#musician',
+                            name: 'Toti Sanz',
+                            url: 'https://totisanz.com',
+                            genre: ['Pop', 'Pop Latino'],
+                            description: 'Toti Sanz es un cantante y compositor de Lanzarote, España.',
+                            foundingLocation: {
+                                '@type': 'Place',
+                                name: 'Lanzarote, Islas Canarias, España',
+                            },
+                            sameAs: [
+                                'https://www.instagram.com/toti.sanz/',
+                                'https://www.facebook.com/people/Toti-Sanz/100091980272864/',
+                                'https://www.youtube.com/@TotiSanz',
+                                'https://open.spotify.com/artist/0RWI1GOUTOVYETw5uVKmRC',
+                                'https://www.tiktok.com/@toti.sanz',
+                                'https://music.apple.com/es/artist/toti-sanz/1718940361',
+                            ],
+                        }),
+                    }}
+                />
+
+                {children}
+            </body>
         </html>
     );
 }
