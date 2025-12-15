@@ -60,7 +60,7 @@ export default function SingleSection() {
                                     variant="outline"
                                     size="lg"
                                     asChild
-                                    className="h-12 w-full gap-2 border-2 transition-all hover:scale-105 hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500 lg:h-14 lg:justify-start lg:gap-4 lg:text-base lg:font-semibold"
+                                    className="h-12 w-full gap-2 border transition-all hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500 lg:h-14 lg:justify-start lg:gap-4 lg:text-base lg:font-semibold"
                                 >
                                     <Link href={href} target="_blank" rel="noopener noreferrer">
                                         {icon}
