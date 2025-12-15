@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://totisanz.com'), // ← cambia por tu dominio real
+    metadataBase: new URL('https://totisanz.com'),
     title: {
         default: 'Toti Sanz',
         template: '%s | Toti Sanz',
@@ -30,13 +30,22 @@ export const metadata: Metadata = {
         locale: 'es_ES',
         url: 'https://totisanz.com',
         siteName: 'Toti Sanz',
-        title: 'Toti Sanz',
+        title: 'Toti Sanz – Artista musical',
         description: 'Cantante y compositor de Lanzarote.',
+        images: [
+            {
+                url: '/images/og-image.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Toti Sanz, cantante y compositor',
+            },
+        ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Toti Sanz',
+        title: 'Toti Sanz – Artista musical',
         description: 'Cantante y compositor de Lanzarote.',
+        images: ['/images/og-image.jpg'],
     },
 };
 
