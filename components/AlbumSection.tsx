@@ -141,7 +141,7 @@ export default function AlbumSection() {
                                 >
                                     <Link href={href} target="_blank" rel="noopener noreferrer" className="relative w-full h-full flex items-center justify-center overflow-hidden">
                                         {/* Contenido normal */}
-                                        <div className="flex items-center gap-3 translate-y-0 group-hover:translate-y-10 transform transition-transform duration-200 ease-in-out">
+                                        <div className="flex items-center gap-3 translate-y-0 group-hover:translate-y-15 transform transition-transform duration-200 ease-in-out">
                                             {icon}
                                             <span className="hidden sm:inline text-sm lg:text-base font-medium">{label}</span>
                                         </div>
