@@ -6,6 +6,34 @@ import { Textarea } from '@/components/ui/textarea';
 import { Mail, User, MessageSquare, Send } from 'lucide-react';
 import { SiInstagram, SiYoutube, SiSpotify, SiTiktok } from '@icons-pack/react-simple-icons';
 import { useState } from 'react';
+import SocialLinks from './ui/social-links';
+
+const socialLinks = [
+    {
+        name: 'Instagram',
+        href: 'https://www.instagram.com/toti.sanz/',
+        icon: SiInstagram,
+        color: 'hover:text-pink-500',
+    },
+    {
+        name: 'YouTube',
+        href: 'https://www.youtube.com/@TotiSanz',
+        icon: SiYoutube,
+        color: 'hover:text-red-500',
+    },
+    {
+        name: 'Spotify',
+        href: 'https://open.spotify.com/intl-es/artist/0RWI1GOUTOVYETw5uVKmRC',
+        icon: SiSpotify,
+        color: 'hover:text-green-500',
+    },
+    {
+        name: 'TikTok',
+        href: 'https://www.tiktok.com/@toti.sanz',
+        icon: SiTiktok,
+        color: 'hover:text-white',
+    },
+];
 
 export default function ContactSection() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -56,44 +84,7 @@ export default function ContactSection() {
                         {/* Redes sociales */}
                         <div>
                             <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">Sígueme en</p>
-                            <div className="flex flex-wrap gap-4">
-                                <a
-                                    href="https://www.instagram.com/toti.sanz/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-gray-200 transition-all hover:border-pink-500 hover:bg-pink-50 hover:text-pink-500"
-                                    aria-label="Instagram"
-                                >
-                                    <SiInstagram className="h-5 w-5" />
-                                </a>
-                                <a
-                                    href="https://www.youtube.com/@TotiSanz"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-gray-200 transition-all hover:border-red-500 hover:bg-red-50 hover:text-red-500"
-                                    aria-label="YouTube"
-                                >
-                                    <SiYoutube className="h-5 w-5" />
-                                </a>
-                                <a
-                                    href="https://open.spotify.com/intl-es/artist/0RWI1GOUTOVYETw5uVKmRC"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-gray-200 transition-all hover:border-green-500 hover:bg-green-50 hover:text-green-500"
-                                    aria-label="Spotify"
-                                >
-                                    <SiSpotify className="h-5 w-5" />
-                                </a>
-                                <a
-                                    href="https://www.tiktok.com/@toti.sanz"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-gray-200 transition-all hover:border-black hover:bg-gray-50"
-                                    aria-label="TikTok"
-                                >
-                                    <SiTiktok className="h-5 w-5" />
-                                </a>
-                            </div>
+                            <SocialLinks links={socialLinks} />
                         </div>
 
                         {/* Email directo */}

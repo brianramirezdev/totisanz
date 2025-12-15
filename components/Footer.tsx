@@ -1,7 +1,7 @@
 import { SiInstagram, SiYoutube, SiSpotify, SiTiktok } from '@icons-pack/react-simple-icons';
 import Link from 'next/link';
-import Image from 'next/image';
 import EgregorLogo from './ui/egregor-logo';
+import SocialLinks from './ui/social-links';
 
 const socialLinks = [
     {
@@ -69,20 +69,8 @@ export default function Footer() {
                     {/* Social & Contact */}
                     <div>
                         <h4 className="mb-6 text-sm font-semibold uppercase tracking-wider text-gray-400 md:text-base">Sígueme</h4>
-
-                        <div className="mb-8 flex gap-4">
-                            {socialLinks.map((social) => (
-                                <a
-                                    key={social.name}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={social.name}
-                                    className={`flex h-14 w-14 items-center justify-center rounded-full border border-white/20 transition-all hover:scale-110 md:h-16 md:w-16 ${social.color}`}
-                                >
-                                    <social.icon className="h-6 w-6 md:h-7 md:w-7" />
-                                </a>
-                            ))}
+                        <div className="mb-8">
+                            <SocialLinks links={socialLinks} size="lg" dark />
                         </div>
 
                         <div className="space-y-3">
