@@ -7,6 +7,7 @@ import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
 import { SiInstagram, SiYoutube, SiSpotify, SiTiktok } from '@icons-pack/react-simple-icons';
 import { useHeroRevealAnimation } from '@/hooks/useHeroRevealAnimation';
+import SocialLinks from './ui/social-links';
 
 const socialLinks = [
     { name: 'Instagram', href: 'https://www.instagram.com/toti.sanz/', icon: SiInstagram },
@@ -46,17 +47,7 @@ export default function HeroSection() {
 
                 {/* Social */}
                 <div className="hero-item z-10 place-self-end justify-self-start hidden md:flex w-fit gap-3 rounded  px-2 py-1 ">
-                    {socialLinks.map((social) => (
-                        <a
-                            key={social.name}
-                            href={social.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group flex size-10 md:size-14 items-center justify-center rounded-full text-white/80 transition-all hover:-translate-y-1 hover:text-orange-500"
-                        >
-                            <social.icon className="size-6 md:size-7 group-hover:scale-110 transition-transform" />
-                        </a>
-                    ))}
+                    <SocialLinks links={socialLinks} dark size="lg" />
                 </div>
 
                 {/* CTA */}
