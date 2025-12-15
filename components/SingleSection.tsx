@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SiApplemusic, SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
+import Marquee from './ui/marquee';
 
 const musicLinks = [
     {
@@ -27,12 +28,7 @@ export default function SingleSection() {
     return (
         <section id="single" className="overflow-hidden bg-white py-8 md:py-16">
             {/* Marquee */}
-            <div className="mb-10 overflow-hidden border-y border-gray-900 py-4 md:mb-12 md:py-6">
-                <div className="flex w-max animate-[marquee_40s_linear_infinite] gap-12">
-                    <h2 className="text-nowrap text-4xl font-bold md:text-7xl lg:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗</h2>
-                    <h2 className="text-nowrap text-4xl font-bold md:text-7xl lg:text-8xl">SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗</h2>
-                </div>
-            </div>
+            <Marquee text="SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗" border />
 
             {/* Contenido principal */}
             <div className="mx-auto max-w-7xl px-6 2xl:px-0 py-12 md:py-24">

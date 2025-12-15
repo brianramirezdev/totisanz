@@ -150,3 +150,23 @@
         transform: translateX(-50%);
     }
 }
+
+.animate-marquee-slow {
+    animation: marquee 80s linear infinite;
+}
+
+.animate-marquee-normal {
+    animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-fast {
+    animation: marquee 20s linear infinite;
+}
+
+.animate-marquee-sonic {
+    animation: marquee 10s linear infinite;
+}
+
+.animate-marquee-reverse {
+    animation-direction: reverse;
+}
