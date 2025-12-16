@@ -92,7 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                                 name: 'Como Te Pido',
                                 description: "Videoclip oficial del single 'Como Te Pido' de Toti Sanz.",
                                 thumbnailUrl: ['https://i.ytimg.com/vi/ZVOvuItRNvs/maxresdefault.jpg'],
-                                uploadDate: '2025-01-01',
+                                uploadDate: '2025-01-01T00:00:00Z',
                                 contentUrl: 'https://www.youtube.com/watch?v=ZVOvuItRNvs',
                                 embedUrl: 'https://www.youtube.com/embed/ZVOvuItRNvs',
                                 publisher: {
