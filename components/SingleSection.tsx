@@ -36,7 +36,13 @@ export default function SingleSection() {
                     {/* Video */}
                     <div className="overflow-hidden rounded-xl shadow-2xl">
                         <div className="aspect-video">
-                            <iframe src="https://www.youtube.com/embed/ZVOvuItRNvs" className="h-full w-full" allowFullScreen title="Como Te Pido - Toti Sanz" />
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/ZVOvuItRNvs"
+                                className="h-full w-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                title="Como Te Pido - Toti Sanz"
+                            />
                         </div>
                     </div>
 
