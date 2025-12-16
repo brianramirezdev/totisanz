@@ -5,10 +5,10 @@ import Image from 'next/image';
 
 const products = [
     { id: 1, name: 'Álbum Oficial', price: '25', image: '/images/album.webp', available: true, date: '14.02' },
-    { id: 2, name: 'Gorra Oficial', price: '20', image: '/images/merch/product-2.jpg', available: false, date: '21.03' },
-    { id: 3, name: 'Sudadera Oficial', price: '40', image: '/images/merch/product-3.jpg', available: false, date: '05.05' },
-    { id: 4, name: 'Póster Edición Limitada', price: '15', image: '/images/merch/product-4.jpg', available: false, date: '18.07' },
-    { id: 5, name: 'Llaveros Oficiales', price: '10', image: '/images/merch/product-5.jpg', available: false, date: '30.08' },
+    { id: 2, name: 'Gorra Oficial', price: '20', image: '/images/album.webp', available: false, date: '21.03' },
+    { id: 3, name: 'Sudadera Oficial', price: '40', image: '/images/album.webp', available: false, date: '05.05' },
+    { id: 4, name: 'Póster Edición Limitada', price: '15', image: '/images/album.webp', available: false, date: '18.07' },
+    { id: 5, name: 'Llaveros Oficiales', price: '10', image: '/images/album.webp', available: false, date: '30.08' },
 ];
 
 export default function MerchSection() {
