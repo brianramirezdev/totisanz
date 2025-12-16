@@ -11,12 +11,12 @@ import MerchSection from '@/components/MerchSection';
 import CommunitySection from '@/components/CommunitySection';
 
 export const metadata: Metadata = {
-    title: 'Artista musical de Lanzarote',
-    description: 'Toti Sanz es un cantante y compositor de Lanzarote. Descubre su música, singles, álbumes, conciertos y contacto.',
+    title: 'Toti Sanz – Artista musical de Lanzarote | Música y conciertos',
+    description: 'Descubre la música de Toti Sanz, cantante y compositor de Lanzarote. Singles, álbumes, conciertos y contacto.',
     openGraph: {
-        title: 'Toti Sanz – Artista musical de Lanzarote',
+        title: 'Toti Sanz – Música y conciertos en Lanzarote',
         description: 'Escucha la música de Toti Sanz, conoce sus conciertos y descubre su último trabajo.',
-        url: 'https://totisanz.com',
+        url: 'https://www.totisanz.com',
     },
 };
 

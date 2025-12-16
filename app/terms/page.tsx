@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Términos y condiciones | Toti Sanz',
     description: 'Aviso legal y términos de uso de la web oficial de Toti Sanz.',
+    robots: {
+        index: false,
+        follow: true,
+    },
 };
 
 export default function TermsPage() {

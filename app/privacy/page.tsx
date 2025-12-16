@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Política de privacidad | Toti Sanz',
     description: 'Política de privacidad de la web oficial de Toti Sanz.',
+    robots: {
+        index: false,
+        follow: true,
+    },
 };
 
 export default function PrivacyPage() {
