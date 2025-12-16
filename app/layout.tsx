@@ -15,27 +15,30 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://www.totisanz.com'),
+
     title: {
         default: 'Toti Sanz | Cantante y compositor de Lanzarote',
         template: '%s | Toti Sanz',
     },
+
     description: 'Toti Sanz es cantante y compositor de Lanzarote. Descubre su música, singles, álbumes, conciertos y contacto.',
+
     icons: {
         icon: [
             { url: '/favicon.ico', type: 'image/x-icon' },
-            { url: '/images/favicon/favicon.svg', type: 'image/svg+xml' },
-            { url: '/images/favicon/favicon-96x96.png', sizes: '96x96' },
+            { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
         ],
-        apple: '/images/favicon/apple-touch-icon.png',
+        apple: '/apple-icon-180x180.png',
     },
 
-    manifest: '/images/favicon/site.webmanifest',
+    manifest: '/manifest.json',
+
     openGraph: {
         type: 'website',
         locale: 'es_ES',
         url: 'https://www.totisanz.com',
         siteName: 'Toti Sanz',
-        title: 'Toti Sanz – Artista musical',
+        title: 'Toti Sanz – Artista musical de Lanzarote',
         description: 'Cantante y compositor de Lanzarote.',
         images: [
             {
@@ -46,9 +49,10 @@ export const metadata: Metadata = {
             },
         ],
     },
+
     twitter: {
         card: 'summary_large_image',
-        title: 'Toti Sanz – Artista musical',
+        title: 'Toti Sanz – Artista musical de Lanzarote',
         description: 'Cantante y compositor de Lanzarote.',
         images: ['/images/og-image.jpg'],
     },

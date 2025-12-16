@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { SiApplemusic, SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
-import { Disc3, MoveRight, MoveUpRight, Play } from 'lucide-react';
+import { Disc3, MoveUpRight, Play } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
