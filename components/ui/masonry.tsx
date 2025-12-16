@@ -113,6 +113,9 @@ const Masonry: React.FC<MasonryProps> = ({
     const [isInView, setIsInView] = useState(false);
     const hasMounted = useRef(false);
 
+    // 🔍 LIGHTBOX
+    const [activeImage, setActiveImage] = useState<string | null>(null);
+
     /* ───────────────── Intersection Observer ───────────────── */
 
     useEffect(() => {
@@ -209,7 +212,7 @@ const Masonry: React.FC<MasonryProps> = ({
             return;
         }
 
-        // 🖥 Animación desktop
+        // 🖥 Desktop animation
         grid.forEach((item, index) => {
             const selector = `[data-key="${item.id}"]`;
             const target = { x: item.x, y: item.y, width: item.w, height: item.h };
@@ -278,8 +281,9 @@ const Masonry: React.FC<MasonryProps> = ({
                     <div
                         key={item.id}
                         data-key={item.id}
-                        className="absolute box-content cursor-default"
+                        className="absolute box-content cursor-zoom-in"
                         style={{ willChange: 'transform, width, height, opacity' }}
+                        onClick={() => setActiveImage(item.img)} // 🔍 LIGHTBOX
                         onMouseEnter={() => handleMouseEnter(item.id)}
                         onMouseLeave={() => handleMouseLeave(item.id)}
                     >
@@ -292,6 +296,13 @@ const Masonry: React.FC<MasonryProps> = ({
                     </div>
                 ))}
             </div>
+
+            {/* 🔍 LIGHTBOX MODAL */}
+            {activeImage && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={() => setActiveImage(null)}>
+                    <img src={activeImage} alt="" className="max-h-[90vh] max-w-[90vw] rounded-lg shadow-2xl transition-all duration-300" onClick={(e) => e.stopPropagation()} />
+                </div>
+            )}
         </div>
     );
 };
