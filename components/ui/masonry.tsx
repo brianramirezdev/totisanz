@@ -2,6 +2,7 @@
 
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 /* ───────────────── Hooks auxiliares ───────────────── */
 
@@ -113,8 +114,10 @@ const Masonry: React.FC<MasonryProps> = ({
     const [isInView, setIsInView] = useState(false);
     const hasMounted = useRef(false);
 
-    // 🔍 LIGHTBOX
-    const [activeImage, setActiveImage] = useState<string | null>(null);
+    // 🔍 LIGHTBOX SLIDER
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const lightboxRef = useRef<HTMLDivElement>(null);
+    const imageRef = useRef<HTMLImageElement>(null);
 
     /* ───────────────── Intersection Observer ───────────────── */
 
@@ -272,18 +275,103 @@ const Masonry: React.FC<MasonryProps> = ({
         });
     };
 
+    /* ───────────────── Lightbox Controls ───────────────── */
+
+    const openLightbox = (index: number) => {
+        setActiveIndex(index);
+    };
+
+    const closeLightbox = () => {
+        if (lightboxRef.current && imageRef.current) {
+            gsap.to(lightboxRef.current, {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power2.inOut',
+                onComplete: () => setActiveIndex(null),
+            });
+            gsap.to(imageRef.current, {
+                scale: 0.9,
+                duration: 0.3,
+                ease: 'power2.inOut',
+            });
+        } else {
+            setActiveIndex(null);
+        }
+    };
+
+    const goToPrevious = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (activeIndex !== null && activeIndex > 0) {
+            animateImageTransition(() => setActiveIndex(activeIndex - 1), 'left');
+        }
+    };
+
+    const goToNext = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (activeIndex !== null && activeIndex < items.length - 1) {
+            animateImageTransition(() => setActiveIndex(activeIndex + 1), 'right');
+        }
+    };
+
+    const animateImageTransition = (callback: () => void, direction: 'left' | 'right') => {
+        if (!imageRef.current) {
+            callback();
+            return;
+        }
+
+        const xOffset = direction === 'left' ? -100 : 100;
+
+        gsap.to(imageRef.current, {
+            opacity: 0,
+            x: xOffset,
+            duration: 0.2,
+            ease: 'power2.in',
+            onComplete: () => {
+                callback();
+                gsap.fromTo(imageRef.current, { opacity: 0, x: -xOffset, scale: 0.95 }, { opacity: 1, x: 0, scale: 1, duration: 0.3, ease: 'power2.out' });
+            },
+        });
+    };
+
+    /* ───────────────── Lightbox Open Animation ───────────────── */
+
+    useEffect(() => {
+        if (activeIndex !== null && lightboxRef.current && imageRef.current) {
+            gsap.fromTo(imageRef.current, { scale: 0.9, opacity: 0.5 }, { scale: 1, opacity: 1, duration: 0.4, ease: 'power3.out' });
+        }
+    }, [activeIndex]);
+
+    /* ───────────────── Keyboard Navigation ───────────────── */
+
+    useEffect(() => {
+        if (activeIndex === null) return;
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft' && activeIndex > 0) {
+                animateImageTransition(() => setActiveIndex(activeIndex - 1), 'left');
+            }
+            if (e.key === 'ArrowRight' && activeIndex < items.length - 1) {
+                animateImageTransition(() => setActiveIndex(activeIndex + 1), 'right');
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [activeIndex, items.length]);
+
     /* ───────────────── Render ───────────────── */
 
     return (
         <div ref={wrapperRef}>
             <div ref={containerRef} className="relative w-full h-full">
-                {grid.map((item) => (
+                {grid.map((item, index) => (
                     <div
                         key={item.id}
                         data-key={item.id}
                         className="absolute box-content cursor-zoom-in"
                         style={{ willChange: 'transform, width, height, opacity' }}
-                        onClick={() => setActiveImage(item.img)} // 🔍 LIGHTBOX
+                        onClick={() => openLightbox(index)}
                         onMouseEnter={() => handleMouseEnter(item.id)}
                         onMouseLeave={() => handleMouseLeave(item.id)}
                     >
@@ -297,10 +385,47 @@ const Masonry: React.FC<MasonryProps> = ({
                 ))}
             </div>
 
-            {/* 🔍 LIGHTBOX MODAL */}
-            {activeImage && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={() => setActiveImage(null)}>
-                    <img src={activeImage} alt="" className="max-h-[90vh] max-w-[90vw] rounded-lg shadow-2xl transition-all duration-300" onClick={(e) => e.stopPropagation()} />
+            {/* 🔍 LIGHTBOX SLIDER */}
+            {activeIndex !== null && (
+                <div ref={lightboxRef} className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={closeLightbox}>
+                    {/* Close Button */}
+                    <button
+                        onClick={closeLightbox}
+                        className="absolute top-4 right-4 z-10 rounded-full bg-white/10 p-2 text-white backdrop-blur-md transition-all hover:bg-white/20 border-2 border-white/20"
+                        aria-label="Close"
+                    >
+                        <X size={24} />
+                    </button>
+
+                    {/* Previous Button */}
+                    {activeIndex > 0 && (
+                        <button
+                            onClick={goToPrevious}
+                            className="absolute left-4 z-10 rounded-full bg-white/10 p-3 text-white backdrop-blur-md transition-all hover:bg-white/20"
+                            aria-label="Previous"
+                        >
+                            <ChevronLeft size={32} />
+                        </button>
+                    )}
+
+                    {/* Next Button */}
+                    {activeIndex < items.length - 1 && (
+                        <button
+                            onClick={goToNext}
+                            className="absolute right-4 z-10 rounded-full bg-white/10 p-3 text-white backdrop-blur-md transition-all hover:bg-white/20"
+                            aria-label="Next"
+                        >
+                            <ChevronRight size={32} />
+                        </button>
+                    )}
+
+                    {/* Image */}
+                    <img ref={imageRef} src={items[activeIndex].img} alt="" className="max-h-[90vh] max-w-[90vw] rounded-lg shadow-2xl" onClick={(e) => e.stopPropagation()} />
+
+                    {/* Image Counter */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-md">
+                        {activeIndex + 1} / {items.length}
+                    </div>
                 </div>
             )}
         </div>
