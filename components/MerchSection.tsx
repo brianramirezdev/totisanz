@@ -17,7 +17,7 @@ export default function MerchSection() {
             <div className="mx-auto max-w-7xl">
                 <div className="mb-8 md:mb-20 flex flex-col items-start">
                     <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight">MERCH </h2>
-                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-300 uppercase">Colección 2026</h3>
+                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-400 uppercase">Colección 2026</h3>
                 </div>
 
                 {/* ───────────────── Timeline ───────────────── */}
@@ -83,12 +83,26 @@ export default function MerchSection() {
                                         <p className="text-base text-gray-600">{product.available ? product.price + ' €' : '-'}</p>
 
                                         {product.available ? (
-                                            <Button size="sm" className=" gap-2 bg-orange-500 font-semibold transition-all hover:bg-orange-600">
-                                                <ShoppingBag className="size-4" />
+                                            <Button
+                                                type="button"
+                                                aria-label={`Comprar ${product.name}`}
+                                                title={`Comprar ${product.name}`}
+                                                size="sm"
+                                                className=" gap-2 bg-orange-500 font-semibold transition-all hover:bg-orange-600"
+                                            >
+                                                <ShoppingBag className="size-4" aria-hidden="true" />
                                             </Button>
                                         ) : (
-                                            <Button size="sm" variant="ghost" disabled className="mt-auto text-gray-400 bg-gray-200">
-                                                <Lock className="size-4" />
+                                            <Button
+                                                type="button"
+                                                aria-label={`${product.name} no disponible`}
+                                                title="Producto no disponible"
+                                                size="sm"
+                                                variant="ghost"
+                                                disabled
+                                                className="mt-auto text-gray-400 bg-gray-200"
+                                            >
+                                                <Lock className="size-4" aria-hidden="true" />
                                             </Button>
                                         )}
                                     </div>

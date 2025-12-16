@@ -16,27 +16,11 @@ export default function ConcertsSection() {
             <div className="mx-auto max-w-7xl">
                 <div className="mb-6 md:mb-12 flex flex-col sm:flex-row items-start sm:items-end gap-2 sm:gap-6">
                     <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight">CONCIERTOS </h2>
-                    <span className="hidden sm:block text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-gray-300">∗ </span>
-                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-gray-300">2026</h3>
+                    <span className="hidden sm:block text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-gray-400">∗ </span>
+                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-gray-400">2026</h3>
                 </div>
 
                 <div className="grid gap-12 lg:gap-16">
-                    {/* Video lateral */}
-                    {/*
-      <div className="order-2 lg:order-1">
-        <div className="sticky top-24 overflow-hidden rounded-xl shadow-2xl">
-          <div className="aspect-9/16">
-            <iframe
-              src="https://www.youtube.com/embed/ZVOvuItRNvs?start=2&autoplay=1&mute=1&loop=1&playlist=ZVOvuItRNvs"
-              className="h-full w-full"
-              allowFullScreen
-              title="Toti Sanz en vivo"
-            />
-          </div>
-        </div>
-      </div>
-      */}
-
                     {/* Lista de conciertos */}
                     <div className="order-1 lg:order-2">
                         {concerts.map((concert, index) => (

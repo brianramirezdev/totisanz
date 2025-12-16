@@ -63,7 +63,7 @@ export default function ContactSection() {
             <div className="mx-auto max-w-7xl">
                 <div className="mb-8 md:mb-20 flex flex-col items-start">
                     <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight">CONTACTO </h2>
-                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-300 uppercase">Hablemos</h3>
+                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-400 uppercase">Hablemos</h3>
                 </div>
 
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
