@@ -5,6 +5,7 @@ import './globals.css';
 const inter = Inter({
     subsets: ['latin'],
     variable: '--font-sans',
+    display: 'swap',
     adjustFontFallback: true,
 });
 
@@ -12,6 +13,8 @@ const spaceGrotesk = Space_Grotesk({
     subsets: ['latin'],
     weight: ['600', '700'],
     variable: '--font-display',
+    display: 'swap',
+    adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
         apple: '/apple-icon-180x180.png',
     },
 
-    manifest: '/manifest.json',
+    // manifest: '/manifest.json',
 
     openGraph: {
         type: 'website',
@@ -59,6 +62,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="es">
+            <head>
+                <link rel="manifest" href="/manifest.json" />
+            </head>
             <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
                 {/* Schema.org JSON-LD */}
                 <script
