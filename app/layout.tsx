@@ -5,11 +5,12 @@ import './globals.css';
 const inter = Inter({
     subsets: ['latin'],
     variable: '--font-sans',
+    adjustFontFallback: true,
 });
 
 const spaceGrotesk = Space_Grotesk({
     subsets: ['latin'],
-    weight: ['400', '500', '600', '700'],
+    weight: ['600', '700'],
     variable: '--font-display',
 });
 
