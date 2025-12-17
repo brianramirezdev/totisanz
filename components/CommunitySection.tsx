@@ -1,6 +1,8 @@
 import { SiInstagram } from '@icons-pack/react-simple-icons';
 import Masonry from './ui/masonry';
 import Slider from './ui/slider';
+import { Carousel } from './ui/carousel';
+import CommunityCarousel from './ui/community-carousel';
 
 const communityPhotos = [
     { id: '1', img: '/images/community/photo-1.avif', url: '#', height: 800 },
@@ -34,7 +36,8 @@ export default function CommunitySection() {
                 <div className="h-fit lg:h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                     {/* Slider → mobile & tablet */}
                     <div className="block lg:hidden">
-                        <Slider items={communityPhotos} />
+                        {/* <Slider items={communityPhotos} /> */}
+                        <CommunityCarousel />
                     </div>
 
                     {/* Masonry → desktop */}
