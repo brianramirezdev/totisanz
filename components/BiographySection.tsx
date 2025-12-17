@@ -34,7 +34,7 @@ const interview = [
 
 export default function BiographySection() {
     return (
-        <section id="biografia" className="bg-white px-6 py-20 text-black md:py-32">
+        <section id="biografia" className="bg-background-soft px-6 py-20 text-black md:py-32">
             <div className="mx-auto max-w-7xl">
                 <div className="mb-8">
                     <h2 className="mb-4 text-6xl font-bold tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">BIOGRAFÍA</h2>
@@ -46,20 +46,20 @@ export default function BiographySection() {
 
                 <Accordion type="single" collapsible className="space-y-4">
                     {interview.map((item, index) => (
-                        <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200 transition-colors hover:border-orange-500">
-                            <AccordionTrigger className="group py-6 text-left text-lg font-semibold text-gray-900 hover:text-orange-500 hover:no-underline md:text-xl [&[data-state=open]]:text-orange-500">
+                        <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200 transition-colors hover:border-accent-orange">
+                            <AccordionTrigger className="group py-6 text-left text-lg font-semibold text-gray-900 hover:text-accent-orange hover:no-underline md:text-xl [&[data-state=open]]:text-accent-orange">
                                 <span className="pr-4">{item.question}</span>
                             </AccordionTrigger>
 
                             <AccordionContent className="pb-6 pt-2 text-base leading-relaxed text-gray-600 md:text-lg">
-                                <div className="pl-4 border-l-2 border-orange-500">{item.answer}</div>
+                                <div className="pl-4 border-l-2 border-accent-orange">{item.answer}</div>
                             </AccordionContent>
                         </AccordionItem>
                     ))}
                 </Accordion>
 
                 {/* Quote final */}
-                <div className="mt-20 border-l-4 border-orange-500 pl-6">
+                <div className="mt-20 border-l-4 border-accent-orange pl-6">
                     <blockquote className="text-2xl font-light italic text-gray-700 md:text-3xl">"Escribo sobre lo que siento, sobre mis vivencias."</blockquote>
                     <p className="mt-4 text-sm font-medium uppercase tracking-wider text-gray-500">— Toti Sanz</p>
                 </div>

@@ -5,6 +5,8 @@
 
 @theme inline {
     --color-background: var(--background);
+    --color-background-soft: var(--background-soft);
+    --color-accent-orange: var(--accent-orange);
     --color-foreground: var(--foreground);
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
@@ -79,6 +81,8 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    --background-soft: oklch(0.98 0 0);
+    --accent-orange: oklch(0.646 0.222 41.116);
 }
 
 .dark {

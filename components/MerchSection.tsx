@@ -13,11 +13,11 @@ const products = [
 
 export default function MerchSection() {
     return (
-        <section id="merch" className="bg-gray-50 px-6 py-8 md:py-16 mx-4 rounded border border-gray-200">
+        <section id="merch" className="bg-white px-6 py-8 md:py-16 mx-4 rounded border border-gray-200">
             <div className="mx-auto max-w-7xl">
                 <div className="mb-8 md:mb-20 flex flex-col items-start">
                     <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight">MERCH </h2>
-                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-400 uppercase">Colección 2026</h3>
+                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-500 uppercase">Colección 2026</h3>
                 </div>
 
                 {/* ───────────────── Timeline ───────────────── */}
@@ -36,7 +36,7 @@ export default function MerchSection() {
                                     {/* Punto */}
                                     <div
                                         className={`relative z-10 h-4 w-4 rounded-full border-2 border-gray-50 ${
-                                            product.available ? 'bg-orange-500 ring-4 ring-orange-500/20 border-orange-200' : 'bg-gray-300'
+                                            product.available ? 'bg-accent-orange ring-4 ring-accent-orange/20 border-orange-200' : 'bg-gray-300'
                                         }`}
                                     />
 
@@ -58,10 +58,12 @@ export default function MerchSection() {
                     {products.map((product) => (
                         <Card
                             key={product.id}
-                            className={`group min-h-full h-fit overflow-hidden border transition-all ${product.available ? 'hover:border-orange-500 hover:shadow-lg' : ''}  py-0`}
+                            className={`group min-h-full h-fit overflow-hidden border transition-all ${
+                                product.available ? 'hover:border-accent-orange hover:shadow-lg' : ''
+                            }  py-0`}
                         >
-                            <CardContent className="p-0">
-                                <div className="relative aspect-square overflow-hidden bg-gray-100 rounded-b-xl">
+                            <CardContent className="p-0 bg-background-soft">
+                                <div className="relative aspect-square overflow-hidden rounded-b-xl">
                                     <Image
                                         src={product.image}
                                         alt={product.name}
@@ -88,7 +90,7 @@ export default function MerchSection() {
                                                 aria-label={`Comprar ${product.name}`}
                                                 title={`Comprar ${product.name}`}
                                                 size="sm"
-                                                className=" gap-2 bg-orange-500 font-semibold transition-all hover:bg-orange-600"
+                                                className=" gap-2 bg-accent-orange font-semibold transition-all hover:bg-orange-600"
                                             >
                                                 <ShoppingBag className="size-4" aria-hidden="true" />
                                             </Button>

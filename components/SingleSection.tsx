@@ -26,7 +26,7 @@ const musicLinks = [
 
 export default function SingleSection() {
     return (
-        <section id="single" className="overflow-hidden bg-white py-8 md:py-16">
+        <section id="single" className="overflow-hidden bg-background-soft py-8 md:py-16">
             {/* Marquee */}
             <Marquee text="SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗" border />
 
@@ -50,7 +50,7 @@ export default function SingleSection() {
                     <div className="flex flex-col gap-8 lg:justify-center">
                         {/* Título */}
                         <div>
-                            <h3 className="text-5xl font-bold uppercase tracking-tight text-orange-500 md:text-6xl lg:text-5xl xl:text-6xl">Como Te Pido</h3>
+                            <h3 className="text-5xl font-bold uppercase tracking-tight text-accent-orange md:text-6xl lg:text-5xl xl:text-6xl">Como Te Pido</h3>
                             <p className="mt-3 text-lg text-gray-600">Nuevo single 2025</p>
                         </div>
 
@@ -62,7 +62,7 @@ export default function SingleSection() {
                                     variant="outline"
                                     size="lg"
                                     asChild
-                                    className="h-12 w-full gap-2 border transition-all hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500 lg:h-14 lg:justify-start lg:gap-4 lg:text-base lg:font-semibold"
+                                    className="h-12 w-full gap-2 border transition-all hover:border-accent-orange hover:bg-accent-orange/10 hover:text-accent-orange lg:h-14 lg:justify-start lg:gap-4 lg:text-base lg:font-semibold"
                                 >
                                     <Link href={href} target="_blank" rel="noopener noreferrer">
                                         {icon}

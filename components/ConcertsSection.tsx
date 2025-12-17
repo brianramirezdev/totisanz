@@ -12,12 +12,12 @@ const concerts = [
 
 export default function ConcertsSection() {
     return (
-        <section id="conciertos" className="bg-gray-50 border-t border-b border-gray-200 px-4 py-8 sm:px-6 md:py-16">
+        <section id="conciertos" className="bg-white border-t border-b border-gray-200 px-4 py-8 sm:px-6 md:py-16">
             <div className="mx-auto max-w-7xl">
                 <div className="mb-6 md:mb-12 flex flex-col sm:flex-row items-start sm:items-end gap-2 sm:gap-6">
                     <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight">CONCIERTOS </h2>
-                    <span className="hidden sm:block text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-gray-400">∗ </span>
-                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-gray-400">2026</h3>
+                    <span className="hidden sm:block text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-gray-500">∗ </span>
+                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-gray-500">2026</h3>
                 </div>
 
                 <div className="grid gap-12 lg:gap-16">
@@ -26,7 +26,7 @@ export default function ConcertsSection() {
                         {concerts.map((concert, index) => (
                             <div
                                 key={index}
-                                className="group flex flex-col gap-4 border-b border-gray-200 py-5 transition-all hover:border-orange-500 sm:flex-row sm:items-center sm:justify-between"
+                                className="group flex flex-col gap-4 border-b border-gray-200 py-5 transition-all hover:border-accent-orange sm:flex-row sm:items-center sm:justify-between"
                             >
                                 {/* Fila superior en móvil: fecha + comprar */}
                                 <div className="flex items-center justify-between sm:block sm:justify-start">
@@ -40,7 +40,7 @@ export default function ConcertsSection() {
                                     <div className="sm:hidden">
                                         <Button
                                             variant="ghost"
-                                            className="px-0 font-semibold text-gray-900 transition-all hover:bg-transparent hover:text-orange-500 hover:underline hover:underline-offset-4"
+                                            className="px-0 font-semibold text-gray-900 transition-all hover:bg-transparent hover:text-accent-orange hover:underline hover:underline-offset-4"
                                         >
                                             COMPRAR
                                         </Button>
@@ -60,7 +60,7 @@ export default function ConcertsSection() {
                                 <div className="hidden sm:block">
                                     <Button
                                         variant="ghost"
-                                        className="px-0 font-semibold text-gray-900 transition-all hover:bg-transparent hover:text-orange-500 hover:underline hover:underline-offset-4"
+                                        className="px-0 font-semibold text-gray-900 transition-all hover:bg-transparent hover:text-accent-orange hover:underline hover:underline-offset-4"
                                     >
                                         COMPRAR
                                     </Button>

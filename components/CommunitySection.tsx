@@ -25,7 +25,7 @@ const communityPhotos = [
 
 export default function CommunitySection() {
     return (
-        <section id="comunidad" className="bg-white px-6 py-12 md:py-20 text-black">
+        <section id="comunidad" className="bg-background-soft px-6 py-12 md:py-20 text-black">
             <div className="mx-auto flex max-w-7xl flex-col gap-8 md:gap-12">
                 {/* Título */}
                 <div className="flex flex-col gap-4">
@@ -60,9 +60,9 @@ export default function CommunitySection() {
                     <div className="flex max-w-2xl flex-col items-center gap-6 text-center">
                         <h3 className="text-2xl font-bold md:text-3xl">¿Tienes una foto con Toti?</h3>
 
-                        <p className="text-gray-500">
+                        <p className="text-gray-500 text-md md:text-xl">
                             Comparte tu momento con nosotros usando el hashtag
-                            <span className="ml-1 font-bold text-orange-500">#TotiSanzFans</span>
+                            <span className="ml-1 font-bold  text-accent-orange">#TotiSanzFans</span>
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-4">
@@ -70,7 +70,7 @@ export default function CommunitySection() {
                                 href="https://www.instagram.com/toti.sanz/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-700 transition-all hover:border-orange-500 hover:bg-orange-500/10 hover:text-orange-500"
+                                className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-700 transition-all hover:border-accent-orange hover:bg-accent-orange/10 hover:text-accent-orange"
                             >
                                 Etiquétanos en Instagram
                                 <SiInstagram className="h-6 w-6" />

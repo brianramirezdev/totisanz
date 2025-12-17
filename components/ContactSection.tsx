@@ -59,11 +59,11 @@ export default function ContactSection() {
     };
 
     return (
-        <section id="contacto" className="bg-white px-6 2xl:px-0 py-16 md:py-32">
+        <section id="contacto" className="bg-background-soft px-6 2xl:px-0 py-16 md:py-32">
             <div className="mx-auto max-w-7xl">
                 <div className="mb-8 md:mb-20 flex flex-col items-start">
                     <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight">CONTACTO </h2>
-                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-400 uppercase">Hablemos</h3>
+                    <h3 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-500 uppercase">Hablemos</h3>
                 </div>
 
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -84,9 +84,9 @@ export default function ContactSection() {
                         </div>
 
                         {/* Email directo */}
-                        <div className="border-l-4 border-orange-500 pl-6">
+                        <div className="border-l-4 border-accent-orange pl-6">
                             <p className="mb-2 text-sm font-medium text-gray-500">Email directo</p>
-                            <a href="mailto:contacto@totisanz.com" className="text-xl font-semibold hover:text-orange-500 md:text-2xl">
+                            <a href="mailto:contacto@totisanz.com" className="text-xl font-semibold hover:text-accent-orange md:text-2xl">
                                 contacto@totisanz.com
                             </a>
                         </div>
@@ -97,7 +97,7 @@ export default function ContactSection() {
                         {/* Nombre */}
                         <div>
                             <label className="mb-2 flex items-center gap-2 text-sm font-semibold">
-                                <User className="h-4 w-4 text-orange-500" />
+                                <User className="h-4 w-4 text-accent-orange" />
                                 Tu nombre
                             </label>
                             <Input
@@ -113,7 +113,7 @@ export default function ContactSection() {
                         {/* Email */}
                         <div>
                             <label className="mb-2 flex items-center gap-2 text-sm font-semibold">
-                                <Mail className="h-4 w-4 text-orange-500" />
+                                <Mail className="h-4 w-4 text-accent-orange" />
                                 Tu email
                             </label>
                             <Input
@@ -129,7 +129,7 @@ export default function ContactSection() {
                         {/* Mensaje */}
                         <div>
                             <label className="mb-2 flex items-center gap-2 text-sm font-semibold">
-                                <MessageSquare className="h-4 w-4 text-orange-500" />
+                                <MessageSquare className="h-4 w-4 text-accent-orange" />
                                 Tu mensaje
                             </label>
                             <Textarea
@@ -147,7 +147,7 @@ export default function ContactSection() {
                             onClick={handleSubmit}
                             size="lg"
                             disabled={isSubmitting || !formData.name || !formData.email || !formData.message}
-                            className="w-full gap-2 bg-orange-500 text-base font-semibold transition-all hover:bg-orange-600 disabled:opacity-50"
+                            className="w-full gap-2 bg-accent-orange text-base font-semibold transition-all hover:bg-orange-600 disabled:opacity-50"
                         >
                             {isSubmitting ? (
                                 <>

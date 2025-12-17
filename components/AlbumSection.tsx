@@ -131,17 +131,22 @@ export default function AlbumSection() {
                         {/* ── Links ── */}
                         <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
                             {musicLinks.map(({ id, href, label, icon }) => (
-                                <Button key={id} variant="outline" asChild className="group h-12 md:h-14 w-full border transition-all text-black flex items-center justify-center">
+                                <Button
+                                    key={id}
+                                    variant="outline"
+                                    asChild
+                                    className="bg-background-soft group h-12 md:h-14 w-full border transition-all text-black flex items-center justify-center"
+                                >
                                     <Link href={href} target="_blank" rel="noopener noreferrer" className="relative w-full h-full flex items-center justify-center overflow-hidden">
                                         {/* Contenido normal */}
-                                        <div className="flex items-center gap-3 text-orange-500 translate-y-0 group-hover:translate-y-15 transform transition-transform duration-200 ease-in-out">
+                                        <div className="flex items-center gap-3 text-accent-orange translate-y-0 group-hover:translate-y-15 transform transition-transform duration-200 ease-in-out">
                                             {icon}
-                                            <span className="hidden sm:inline text-sm lg:text-base font-medium">{label}</span>
+                                            <span className="hidden sm:inline text-base lg:text-xl xl:text-2xl font-medium">{label}</span>{' '}
                                         </div>
 
                                         {/* Icono hover */}
                                         <div className="absolute inset-0 flex items-center justify-center gap-4 -translate-y-10 group-hover:translate-y-0 transform transition-transform duration-200 ease-in-out">
-                                            <MoveUpRight className="size-5 sm:size-6 text-orange-500" />
+                                            <MoveUpRight className="size-5 sm:size-6 text-accent-orange" />
                                         </div>
                                     </Link>
                                 </Button>
