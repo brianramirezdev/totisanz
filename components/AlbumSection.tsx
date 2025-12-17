@@ -141,7 +141,7 @@ export default function AlbumSection() {
                                         {/* Contenido normal */}
                                         <div className="flex items-center gap-3 text-accent-orange translate-y-0 group-hover:translate-y-15 transform transition-transform duration-200 ease-in-out">
                                             {icon}
-                                            <span className="hidden sm:inline text-base lg:text-xl xl:text-2xl font-medium">{label}</span>{' '}
+                                            <span className="hidden sm:inline text-base lg:text-xl xl:text-2xl font-semibold">{label}</span>{' '}
                                         </div>
 
                                         {/* Icono hover */}
