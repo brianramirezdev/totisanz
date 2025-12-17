@@ -90,7 +90,7 @@ export default function CommunityCarousel() {
         <>
             {/* ───────── Carousel ───────── */}
 
-            <Carousel opts={{ align: 'start' }} setApi={setApi} className="w-full">
+            <Carousel opts={{ align: 'start' }} setApi={setApi} className="w-full overflow-x-hidden">
                 <CarouselContent>
                     {communityPhotos.map((photo, index) => (
                         <CarouselItem key={photo.id} className="basis-full sm:basis-1/2 lg:basis-1/3">
