@@ -36,7 +36,6 @@ export default function CommunitySection() {
                 <div className="h-fit lg:h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                     {/* Slider → mobile & tablet */}
                     <div className="block lg:hidden">
-                        {/* <Slider items={communityPhotos} /> */}
                         <CommunityCarousel />
                     </div>
 

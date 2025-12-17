@@ -94,7 +94,11 @@ export default function CommunityCarousel() {
                 <CarouselContent>
                     {communityPhotos.map((photo, index) => (
                         <CarouselItem key={photo.id} className="basis-full sm:basis-1/2 lg:basis-1/3">
-                            <button onClick={() => openLightbox(index)} className="group relative w-full overflow-hidden rounded-[10px]">
+                            <button
+                                onClick={() => openLightbox(index)}
+                                aria-label={`Abrir imagen ${index + 1} de la galería`}
+                                className="group relative w-full overflow-hidden rounded-[10px]"
+                            >
                                 <div className="relative aspect-3/4 w-full">
                                     <img src={photo.img} alt="" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
                                 </div>
