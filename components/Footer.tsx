@@ -1,34 +1,6 @@
-import { SiInstagram, SiYoutube, SiSpotify, SiTiktok } from '@icons-pack/react-simple-icons';
 import Link from 'next/link';
 import EgregorLogo from './ui/egregor-logo';
 import SocialLinks from './ui/social-links';
-
-const socialLinks = [
-    {
-        name: 'Instagram',
-        href: 'https://www.instagram.com/toti.sanz/',
-        icon: SiInstagram,
-        color: 'hover:text-pink-500',
-    },
-    {
-        name: 'YouTube',
-        href: 'https://www.youtube.com/@TotiSanz',
-        icon: SiYoutube,
-        color: 'hover:text-red-500',
-    },
-    {
-        name: 'Spotify',
-        href: 'https://open.spotify.com/intl-es/artist/0RWI1GOUTOVYETw5uVKmRC',
-        icon: SiSpotify,
-        color: 'hover:text-green-500',
-    },
-    {
-        name: 'TikTok',
-        href: 'https://www.tiktok.com/@toti.sanz',
-        icon: SiTiktok,
-        color: 'hover:text-white',
-    },
-];
 
 const quickLinks = [
     { name: 'Inicio', href: '#inicio' },
@@ -70,7 +42,7 @@ export default function Footer() {
                     <div>
                         <h4 className="mb-6 text-sm font-semibold uppercase tracking-wider text-gray-400 md:text-base">Sígueme</h4>
                         <div className="mb-8">
-                            <SocialLinks links={socialLinks} size="lg" dark />
+                            <SocialLinks size="lg" dark />
                         </div>
 
                         <div className="space-y-3">

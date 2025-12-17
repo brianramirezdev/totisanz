@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { SiApplemusic, SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
+import { SiApplemusic, SiSpotify, SiYoutube, SiYoutubemusic } from '@icons-pack/react-simple-icons';
 import { Disc3, MoveUpRight, Play } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,16 +16,22 @@ const musicLinks = [
         icon: <SiSpotify className="size-6" />,
     },
     {
+        id: 'apple music',
+        label: 'Music',
+        href: 'https://music.apple.com/es/album/solo-para-ti-ep/1823152801',
+        icon: <SiApplemusic className="size-6" />,
+    },
+    {
+        id: 'youtube music',
+        label: 'youtube music',
+        href: 'https://music.youtube.com/playlist?list=OLAK5uy_k0VhlfJFQX3KO9HWGfcleU20qIW4A0oJo',
+        icon: <SiYoutubemusic className="size-6" />,
+    },
+    {
         id: 'youtube',
         label: 'YouTube',
         href: 'https://www.youtube.com/watch?v=ZVOvuItRNvs&list=PLRcYtI_WwtdbXre5Toy5dmsNP1c2RyFjo',
         icon: <SiYoutube className="size-6" />,
-    },
-    {
-        id: 'apple',
-        label: 'Music',
-        href: 'https://music.apple.com/es/album/solo-para-ti-ep/1823152801',
-        icon: <SiApplemusic className="size-6" />,
     },
 ];
 
@@ -129,23 +135,26 @@ export default function AlbumSection() {
                         </div>
 
                         {/* ── Links ── */}
-                        <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+                        <div className="grid grid-cols-4 gap-2 sm:gap-3 lg:gap-4">
                             {musicLinks.map(({ id, href, label, icon }) => (
                                 <Button
                                     key={id}
                                     variant="outline"
                                     asChild
-                                    className="bg-background-soft group h-12 md:h-14 w-full border transition-all text-black flex items-center justify-center"
+                                    className="group aspect-square bg-background-soft border transition-all text-black p-6 md:p-8 flex items-center justify-center"
                                 >
-                                    <Link href={href} target="_blank" rel="noopener noreferrer" className="relative w-full h-full flex items-center justify-center overflow-hidden">
-                                        {/* Contenido normal */}
-                                        <div className="flex items-center gap-3 text-accent-orange translate-y-0 group-hover:translate-y-15 transform transition-transform duration-200 ease-in-out">
+                                    <Link
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`Escuchar en ${label}`}
+                                        className="relative size-full flex items-center justify-center overflow-hidden"
+                                    >
+                                        <div className="flex items-center justify-center text-accent-orange translate-y-0 group-hover:translate-y-16 transform transition-transform duration-200 ease-in-out">
                                             {icon}
-                                            <span className="hidden sm:inline text-base lg:text-xl xl:text-2xl font-semibold">{label}</span>{' '}
                                         </div>
 
-                                        {/* Icono hover */}
-                                        <div className="absolute inset-0 flex items-center justify-center gap-4 -translate-y-10 group-hover:translate-y-0 transform transition-transform duration-200 ease-in-out">
+                                        <div className="absolute inset-0 flex items-center justify-center -translate-y-10 group-hover:translate-y-0 transform transition-transform duration-200 ease-in-out">
                                             <MoveUpRight className="size-5 sm:size-6 text-accent-orange" />
                                         </div>
                                     </Link>

@@ -4,36 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, User, MessageSquare, Send } from 'lucide-react';
-import { SiInstagram, SiYoutube, SiSpotify, SiTiktok } from '@icons-pack/react-simple-icons';
 import { useState } from 'react';
 import SocialLinks from './ui/social-links';
-
-const socialLinks = [
-    {
-        name: 'Instagram',
-        href: 'https://www.instagram.com/toti.sanz/',
-        icon: SiInstagram,
-        color: 'hover:text-pink-500',
-    },
-    {
-        name: 'YouTube',
-        href: 'https://www.youtube.com/@TotiSanz',
-        icon: SiYoutube,
-        color: 'hover:text-red-500',
-    },
-    {
-        name: 'Spotify',
-        href: 'https://open.spotify.com/intl-es/artist/0RWI1GOUTOVYETw5uVKmRC',
-        icon: SiSpotify,
-        color: 'hover:text-green-500',
-    },
-    {
-        name: 'TikTok',
-        href: 'https://www.tiktok.com/@toti.sanz',
-        icon: SiTiktok,
-        color: 'hover:text-white',
-    },
-];
 
 export default function ContactSection() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -80,7 +52,7 @@ export default function ContactSection() {
                         {/* Redes sociales */}
                         <div>
                             <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">Sígueme en</p>
-                            <SocialLinks links={socialLinks} />
+                            <SocialLinks />
                         </div>
 
                         {/* Email directo */}

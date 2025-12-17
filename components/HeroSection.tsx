@@ -5,16 +5,8 @@ import Image from 'next/image';
 import CircularText from './ui/circular-text';
 import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
-import { SiInstagram, SiYoutube, SiSpotify, SiTiktok } from '@icons-pack/react-simple-icons';
 import { useHeroRevealAnimation } from '@/hooks/useHeroRevealAnimation';
 import SocialLinks from './ui/social-links';
-
-const socialLinks = [
-    { name: 'Instagram', href: 'https://www.instagram.com/toti.sanz/', icon: SiInstagram },
-    { name: 'YouTube', href: 'https://www.youtube.com/@TotiSanz', icon: SiYoutube },
-    { name: 'Spotify', href: 'https://open.spotify.com/intl-es/artist/0RWI1GOUTOVYETw5uVKmRC', icon: SiSpotify },
-    { name: 'TikTok', href: 'https://www.tiktok.com/@toti.sanz', icon: SiTiktok },
-];
 
 export default function HeroSection() {
     const heroRef = useRef<HTMLElement | null>(null);
@@ -47,7 +39,7 @@ export default function HeroSection() {
 
                 {/* Social */}
                 <div className="hero-item z-10 place-self-end justify-self-start hidden md:flex w-fit gap-3 rounded  px-2 py-1 ">
-                    <SocialLinks links={socialLinks} dark size="lg" />
+                    <SocialLinks dark size="lg" />
                 </div>
 
                 {/* CTA */}
