@@ -43,7 +43,7 @@ export default function SocialLinks({ links = DEFAULT_SOCIAL_LINKS, size = 'md',
                     rel="noopener noreferrer"
                     aria-label={name}
                     className={`${sizeClasses[size]} flex items-center justify-center rounded-lg border-2 transition-all ${
-                        dark ? 'border-white/20 text-gray-300 hover:bg-accent-orange/10' : 'border-gray-500 text-gray-700 hover:bg-orange-50'
+                        dark ? 'border-white/20 text-gray-100 hover:bg-accent-orange/10' : 'border-gray-500 text-gray-700 hover:bg-orange-50'
                     } hover:border-accent-orange hover:text-accent-orange`}
                 >
                     <Icon className={iconSizes[size]} />
