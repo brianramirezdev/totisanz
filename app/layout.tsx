@@ -32,8 +32,6 @@ export const metadata: Metadata = {
         apple: '/apple-icon-180x180.png',
     },
 
-    // manifest: '/manifest.json',
-
     openGraph: {
         type: 'website',
         locale: 'es_ES',
@@ -62,9 +60,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="es">
-            <head>
-                <link rel="manifest" href="/manifest.json" />
-            </head>
             <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
                 {/* Schema.org JSON-LD */}
                 <script
