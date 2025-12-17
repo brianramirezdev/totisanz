@@ -62,7 +62,7 @@ export default function CommunitySection() {
 
                         <p className="text-gray-500 text-md md:text-xl">
                             Comparte tu momento con nosotros usando el hashtag
-                            <span className="ml-1 font-bold  text-accent-orange">#TotiSanzFans</span>
+                            <span className="ml-1 font-bold text-xl text-accent-orange">#TotiSanzFans</span>
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-4">

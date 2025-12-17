@@ -3,14 +3,34 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { SiApplemusic, SiSpotify, SiYoutube } from '@icons-pack/react-simple-icons';
-import { Play } from 'lucide-react';
+import { SiApplemusic, SiSpotify, SiYoutube, SiYoutubemusic } from '@icons-pack/react-simple-icons';
 import Marquee from './ui/marquee';
 
 const musicLinks = [
-    { id: 'spotify', label: 'Spotify', href: 'https://open.spotify.com/intl-es/track/3dpfkFjhgLy1YUYqsJyZca', icon: <SiSpotify className="size-5" /> },
-    { id: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/watch?v=ZVOvuItRNvs', icon: <SiYoutube className="size-5" /> },
-    { id: 'apple', label: 'Apple Music', href: 'https://music.apple.com/es/album/como-te-pido/1718941267?i=1718941268', icon: <SiApplemusic className="size-5" /> },
+    {
+        id: 'spotify',
+        label: 'Spotify',
+        href: 'https://open.spotify.com/intl-es/track/3dpfkFjhgLy1YUYqsJyZca',
+        icon: <SiSpotify className="size-5" />,
+    },
+    {
+        id: 'apple',
+        label: 'Apple Music',
+        href: 'https://music.apple.com/es/album/como-te-pido/1718941267?i=1718941268',
+        icon: <SiApplemusic className="size-5" />,
+    },
+    {
+        id: 'youtube music',
+        label: 'YouTube Music',
+        href: 'https://music.youtube.com/playlist?list=OLAK5uy_k0VhlfJFQX3KO9HWGfcleU20qIW4A0oJo',
+        icon: <SiYoutubemusic className="size-5" />,
+    },
+    {
+        id: 'youtube',
+        label: 'YouTube',
+        href: 'https://www.youtube.com/watch?v=ZVOvuItRNvs',
+        icon: <SiYoutube className="size-5" />,
+    },
 ];
 
 export default function SingleSection() {
