@@ -85,13 +85,12 @@ Web oficial del artista **Toti Sanz**, desarrollada como una experiencia moderna
     
 *   components — Componentes reutilizables
     
-*   sections — Secciones principales de la web
-    
-*   styles — Estilos globales
+*   hooks — Hooks personalizados (animaciones y lógica compartida).
     
 *   public — Assets estáticos
     
 *   lib — Utilidades y helpers
+
     
 
 🚀 Desarrollo local
