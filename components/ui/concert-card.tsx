@@ -29,7 +29,7 @@ export function ConcertCard({ date, month, city, venue, upcoming = true }: Conce
             {/* Card con blur mejorado */}
             <div
                 className={`flex flex-col gap-4 border-b border-gray-200 p-5 transition-all sm:flex-row sm:items-center sm:justify-between ${
-                    upcoming ? 'blur-sm scale-[0.98] opacity-60' : 'hover:border-accent-orange'
+                    upcoming ? 'blur-sm scale-[0.98] opacity-60 select-none' : 'hover:border-accent-orange'
                 }`}
             >
                 {/* Fecha */}
