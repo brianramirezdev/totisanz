@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
-import HeroSection from '@/components/HeroSection';
-import SingleSection from '@/components/SingleSection';
-import AlbumSection from '@/components/AlbumSection';
-import BiographySection from '@/components/BiographySection';
-import ContactSection from '@/components/ContactSection';
+import HeroSection from '@/components/sections/HeroSection';
+import SingleSection from '@/components/sections/SingleSection';
+import AlbumSection from '@/components/sections/AlbumSection';
+import BiographySection from '@/components/sections/BiographySection';
+import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
-import ConcertsSection from '@/components/ConcertsSection';
-import MerchSection from '@/components/MerchSection';
-import CommunitySection from '@/components/CommunitySection';
+import ConcertsSection from '@/components/sections/ConcertsSection';
+import MerchSection from '@/components/sections/MerchSection';
+import CommunitySection from '@/components/sections/CommunitySection';
 
 export const metadata: Metadata = {
     title: 'Toti Sanz – Artista musical de Lanzarote | Música y conciertos',

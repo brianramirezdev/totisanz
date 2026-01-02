@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, User, MessageSquare, Send } from 'lucide-react';
 import { useState } from 'react';
-import SocialLinks from './ui/social-links';
+import SocialLinks from '../ui/social-links';
 
 export default function ContactSection() {
     const [isSubmitting, setIsSubmitting] = useState(false);

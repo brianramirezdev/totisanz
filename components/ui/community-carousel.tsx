@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
@@ -36,28 +36,33 @@ const communityPhotos: Photo[] = [
 
 export default function CommunityCarousel() {
     /* ───────── Carousel state ───────── */
-    const [api, setApi] = React.useState<CarouselApi | null>(null);
-    const [carouselIndex, setCarouselIndex] = React.useState(0);
+    const [api, setApi] = useState<CarouselApi | null>(null);
+    const [carouselIndex, setCarouselIndex] = useState(0);
+    const [canScrollPrev, setCanScrollPrev] = useState(false);
+    const [canScrollNext, setCanScrollNext] = useState(true);
 
     /* ───────── Lightbox state ───────── */
-    const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     const openLightbox = (index: number) => {
         setActiveIndex(index);
     };
+
     const closeLightbox = () => {
         if (api && activeIndex !== null) {
-            api.scrollTo(activeIndex, true); // ← salto instantáneo
+            api.scrollTo(activeIndex, true);
         }
         setActiveIndex(null);
     };
 
-    /* ───────── Sync carousel index ───────── */
-    React.useEffect(() => {
+    /* ───────── Sync carousel state ───────── */
+    useEffect(() => {
         if (!api) return;
 
         const onSelect = () => {
             setCarouselIndex(api.selectedScrollSnap());
+            setCanScrollPrev(api.canScrollPrev());
+            setCanScrollNext(api.canScrollNext());
         };
 
         onSelect();
@@ -69,7 +74,7 @@ export default function CommunityCarousel() {
     }, [api]);
 
     /* ───────── Keyboard navigation (modal) ───────── */
-    React.useEffect(() => {
+    useEffect(() => {
         if (activeIndex === null) return;
 
         const onKeyDown = (e: KeyboardEvent) => {
@@ -86,79 +91,101 @@ export default function CommunityCarousel() {
         return () => window.removeEventListener('keydown', onKeyDown);
     }, [activeIndex]);
 
+    /* ───────── Estilo unificado de botones ───────── */
+    const buttonBaseClass = 'rounded-full bg-white/10 p-3 text-white backdrop-blur-md transition-all hover:bg-white/20';
+
     return (
         <>
             {/* ───────── Carousel ───────── */}
+            <div className="relative">
+                <Carousel
+                    opts={{
+                        align: 'start',
+                        slidesToScroll: 1,
+                        dragFree: true,
+                    }}
+                    setApi={setApi}
+                    className="w-full"
+                >
+                    <CarouselContent className="-ml-2 md:-ml-4">
+                        {communityPhotos.map((photo, index) => (
+                            <CarouselItem key={photo.id} className="pl-2 md:pl-4 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                                <button
+                                    onClick={() => openLightbox(index)}
+                                    aria-label={`Abrir imagen ${index + 1} de la galería`}
+                                    className="group relative w-full overflow-hidden rounded-lg transition-transform duration-300 hover:scale-[1.02]"
+                                >
+                                    <div className="relative aspect-3/4 w-full">
+                                        <img
+                                            src={photo.img}
+                                            alt={`Foto de la comunidad ${index + 1}`}
+                                            className="h-full w-full object-cover transition-all duration-300 group-hover:brightness-110"
+                                        />
+                                        <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                                    </div>
+                                </button>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                </Carousel>
 
-            <Carousel opts={{ align: 'start' }} setApi={setApi} className="w-full overflow-x-hidden">
-                <CarouselContent>
-                    {communityPhotos.map((photo, index) => (
-                        <CarouselItem key={photo.id} className="basis-full sm:basis-1/2 lg:basis-1/3">
-                            <button
-                                onClick={() => openLightbox(index)}
-                                aria-label={`Abrir imagen ${index + 1} de la galería`}
-                                className="group relative w-full overflow-hidden rounded-[10px]"
-                            >
-                                <div className="relative aspect-3/4 w-full">
-                                    <img src={photo.img} alt="" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                                </div>
-                            </button>
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-
-                <CarouselPrevious />
-                <CarouselNext />
-            </Carousel>
+                {/* Indicador de scroll para desktop */}
+                <div className="mt-6 hidden text-center text-sm text-gray-500 md:block">← Desliza para ver más fotos →</div>
+            </div>
 
             {/* ───────── Counter (inline) ───────── */}
-
-            <div className="mt-3 flex justify-center">
+            <div className="mt-4 flex justify-center md:mt-6">
                 <div className="flex w-20 items-center justify-center rounded-full bg-black px-4 py-1.5 text-xs text-white tabular-nums">
                     {String(carouselIndex + 1).padStart(2, '0')} / {String(communityPhotos.length).padStart(2, '0')}
                 </div>
             </div>
 
             {/* ───────── Lightbox ───────── */}
-
             {activeIndex !== null && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={closeLightbox}>
-                    {/* Close */}
-                    <button onClick={closeLightbox} className="absolute right-4 top-6 rounded-full bg-black/60 p-3 text-white hover:bg-black">
-                        <X className="h-5 w-5" />
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm" onClick={closeLightbox}>
+                    {/* Close - Posición mejorada */}
+                    <button onClick={closeLightbox} className={`absolute right-4 top-4 z-10 ${buttonBaseClass} md:right-8 md:top-8`} aria-label="Cerrar">
+                        <X className="h-6 w-6" />
                     </button>
 
-                    {/* Prev */}
+                    {/* Prev - Posición mejorada en desktop */}
                     {activeIndex > 0 && (
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setActiveIndex((i) => i! - 1);
                             }}
-                            className="absolute left-4 rounded-full bg-black/60 p-3 text-white hover:bg-black"
+                            className={`absolute left-4 top-1/2 z-10 -translate-y-1/2 ${buttonBaseClass} md:left-8`}
+                            aria-label="Imagen anterior"
                         >
                             <ChevronLeft className="h-6 w-6" />
                         </button>
                     )}
 
-                    {/* Next */}
+                    {/* Next - Posición mejorada en desktop */}
                     {activeIndex < communityPhotos.length - 1 && (
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setActiveIndex((i) => i! + 1);
                             }}
-                            className="absolute right-4 rounded-full bg-black/60 p-3 text-white hover:bg-black"
+                            className={`absolute right-4 top-1/2 z-10 -translate-y-1/2 ${buttonBaseClass} md:right-8`}
+                            aria-label="Imagen siguiente"
                         >
                             <ChevronRight className="h-6 w-6" />
                         </button>
                     )}
 
                     {/* Image */}
-                    <img src={communityPhotos[activeIndex].img} alt="" className="max-h-[90vh] max-w-[90vw] rounded-lg shadow-2xl" onClick={(e) => e.stopPropagation()} />
+                    <img
+                        src={communityPhotos[activeIndex].img}
+                        alt={`Foto de la comunidad ${activeIndex + 1}`}
+                        className="max-h-[85vh] max-w-[90vw] rounded-lg object-contain shadow-2xl md:max-h-[90vh]"
+                        onClick={(e) => e.stopPropagation()}
+                    />
 
                     {/* Counter (modal) */}
-                    <div className="absolute bottom-12 flex w-20 items-center justify-center rounded-full bg-black/40 px-4 py-1.5 text-xs text-white tabular-nums">
+                    <div className="absolute bottom-6 flex w-20 items-center justify-center rounded-full bg-white/10 px-4 py-1.5 text-xs text-white backdrop-blur-md tabular-nums md:bottom-12">
                         {String(activeIndex + 1).padStart(2, '0')} / {String(communityPhotos.length).padStart(2, '0')}
                     </div>
                 </div>

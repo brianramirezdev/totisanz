@@ -26,7 +26,7 @@ const Marquee: React.FC<MarqueeProps> = ({ text, className = '', itemClassName =
                 {Array.from({ length: repeat }).map((_, i) => (
                     <h2
                         key={i}
-                        className={`text-nowrap font-bold text-4xl md:text-7xl lg:text-8xl ${xl && 'text-6xl xl:text-9xl'}  ${
+                        className={`text-nowrap font-bold text-4xl md:text-7xl lg:text-8xl ${xl && 'text-6xl xl:text-9xl'}   ${
                             dark ? 'text-gray-50' : 'text-gray-900'
                         } ${itemClassName}`}
                     >

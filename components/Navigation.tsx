@@ -9,10 +9,10 @@ const links = [
     ['INICIO', '#inicio'],
     ['SINGLE', '#single'],
     ['ÁLBUM', '#album'],
-    ['BIOGRAFÍA', '#biografia'],
+    // ['BIOGRAFÍA', '#biografia'],
     ['CONCIERTOS', '#conciertos'],
-    ['COMUNIDAD', '#comunidad'],
-    ['MERCH', '#merch'],
+    // ['COMUNIDAD', '#comunidad'],
+    // ['MERCH', '#merch'],
     ['CONTACTO', '#contacto'],
 ];
 

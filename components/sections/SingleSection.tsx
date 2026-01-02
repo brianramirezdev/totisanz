@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SiApplemusic, SiSpotify, SiYoutube, SiYoutubemusic } from '@icons-pack/react-simple-icons';
-import Marquee from './ui/marquee';
+import Marquee from '../ui/marquee';
 
 const musicLinks = [
     {
@@ -38,10 +38,15 @@ export default function SingleSection() {
 
     return (
         <section id="single" className="overflow-hidden bg-background-soft py-8 md:py-16">
-            <Marquee text="SINGLE ∗ NOVEDAD ∗ SINGLE ∗ NOVEDAD ∗" border />
-
             <div className="mx-auto max-w-7xl px-6 2xl:px-0 py-12 md:py-24">
-                <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[1.5fr_1fr] lg:gap-12">
+                <div className="flex flex-col gap-8 lg:gap-12">
+                    {/* Contenido lateral */}
+                    <div className="flex flex-col gap-8 lg:justify-center">
+                        <div>
+                            <h3 className="text-5xl font-bold uppercase tracking-tight text-accent-orange md:text-6xl lg:text-5xl xl:text-8xl">Como Te Pido</h3>
+                            <p className="mt-3 text-lg text-gray-600">Nuevo single 2025</p>
+                        </div>
+                    </div>
                     {/* Video */}
                     <div className="overflow-hidden rounded-xl shadow-2xl">
                         <div className="aspect-video relative">
@@ -74,30 +79,21 @@ export default function SingleSection() {
                             )}
                         </div>
                     </div>
-
-                    {/* Contenido lateral */}
-                    <div className="flex flex-col gap-8 lg:justify-center">
-                        <div>
-                            <h3 className="text-5xl font-bold uppercase tracking-tight text-accent-orange md:text-6xl lg:text-5xl xl:text-6xl">Como Te Pido</h3>
-                            <p className="mt-3 text-lg text-gray-600">Nuevo single 2025</p>
-                        </div>
-
-                        <div className="grid grid-cols-3 gap-3 lg:flex lg:flex-col lg:gap-4">
-                            {musicLinks.map(({ id, href, label, icon }) => (
-                                <Button
-                                    key={id}
-                                    variant="outline"
-                                    size="lg"
-                                    asChild
-                                    className="h-12 w-full gap-2 border transition-all hover:border-accent-orange hover:bg-accent-orange/10 hover:text-accent-orange lg:h-14 lg:justify-start lg:gap-4 lg:text-base lg:font-semibold"
-                                >
-                                    <Link href={href} target="_blank" rel="noopener noreferrer">
-                                        {icon}
-                                        <span className="hidden md:inline lg:inline">{label}</span>
-                                    </Link>
-                                </Button>
-                            ))}
-                        </div>
+                    <div className="grid grid-cols-3 gap-3 lg:gap-4">
+                        {musicLinks.map(({ id, href, label, icon }) => (
+                            <Button
+                                key={id}
+                                variant="outline"
+                                size="lg"
+                                asChild
+                                className="h-12 w-full gap-2 border transition-all hover:border-accent-orange hover:bg-accent-orange/10 hover:text-accent-orange lg:h-14 lg:justify-start lg:gap-4 lg:text-base lg:font-semibold"
+                            >
+                                <Link href={href} target="_blank" rel="noopener noreferrer">
+                                    {icon}
+                                    <span className="hidden md:inline lg:inline">{label}</span>
+                                </Link>
+                            </Button>
+                        ))}
                     </div>
                 </div>
             </div>

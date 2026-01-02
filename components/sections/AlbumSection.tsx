@@ -6,7 +6,7 @@ import { Disc3, MoveUpRight, Play } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import Marquee from './ui/marquee';
+import Marquee from '../ui/marquee';
 
 const musicLinks = [
     {
@@ -66,8 +66,6 @@ export default function AlbumSection() {
     return (
         <section id="album" className="mx-4 rounded bg-linear-to-b from-zinc-900 to-black px-6 py-8 text-white md:py-16 lg:mx-8 lg:py-24">
             <div className="mx-auto max-w-7xl overflow-hidden">
-                <Marquee text="ÁLBUM ∗ ÁLBUM ∗ ÁLBUM ∗ ÁLBUM ∗" className="mb-8 md:mb-16" dark xl />
-
                 <div className="grid gap-6 lg:grid-cols-2 lg:gap-16">
                     {/* ── Cover / Video ── */}
                     <div className="flex">
