@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6f36e0bb-028b-4a9c-8372-5af4aca39310" />
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🎵 Toti Sanz — Official Website
+===============================
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Web oficial del artista **Toti Sanz**, desarrollada como una experiencia moderna, rápida y visualmente cuidada.El proyecto combina animaciones suaves, diseño responsive y una arquitectura preparada para escalar contenidos musicales, conciertos, merch y comunidad.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Live:** [https://totisanz.com](https://totisanz.com/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+✨ Características
+-----------------
 
-## Learn More
+*   Landing visual con una identidad artística marcada
+    
+*   Navegación clara y fluida entre secciones
+    
+*   Secciones principales:
+    
+    *   Inicio
+        
+    *   Singles
+        
+    *   Álbum
+        
+    *   Biografía (formato entrevista)
+        
+    *   Conciertos
+        
+    *   Comunidad
+        
+    *   Merch
+        
+    *   Contacto
+        
+*   Animaciones suaves y transiciones cuidadas
+    
+*   Diseño totalmente responsive (desktop, tablet y mobile)
+    
+*   Optimización de rendimiento y SEO
+    
+*   Arquitectura preparada para futuras integraciones
+    
 
-To learn more about Next.js, take a look at the following resources:
+🛠️ Tecnologías utilizadas
+--------------------------
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Frontend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+*   **Next.js** — Framework principal
+    
+*   **React** — Base de la interfaz
+    
+*   **Tailwind CSS** — Sistema de estilos
+    
+*   **shadcn/ui** — Componentes reutilizables y accesibles
+    
+*   **Lucide Icons** — Iconografía
+    
 
-## Deploy on Vercel
+### Animaciones
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*   **GSAP** — Animaciones complejas y control avanzado
+    
+*   **Framer Motion** — Animaciones declarativas y transiciones
+    
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Infraestructura
+
+*   **Cloudflare** — Gestión de dominio y DNS
+    
+*   **Vercel** — Hosting y despliegue continuo
+    
+
+### Email (en progreso)
+
+*   **Resend** — Envío de emails desde el formulario de contacto_(pendiente de implementación completa)_
+    
+
+📂 Estructura general del proyecto
+----------------------------------
+
+*   app — App Router de Next.js
+    
+*   components — Componentes reutilizables
+    
+*   hooks — Hooks personalizados (animaciones y lógica compartida).
+    
+*   public — Assets estáticos
+    
+*   lib — Utilidades y helpers
+
+    
+
+🚀 Desarrollo local
+-------------------
+
+El proyecto está configurado para desarrollo local con Next.js.Incluye hot reload, soporte para Tailwind y animaciones optimizadas para entorno de desarrollo y producción.
+
+📬 Formulario de contacto
+-------------------------
+
+La sección de contacto permite enviar mensajes directos al artista.Está preparada para integrarse con **Resend**, lo que permitirá una gestión de emails segura, escalable y moderna.
+
+🎨 Diseño y experiencia
+-----------------------
+
+El diseño está enfocado en transmitir la identidad artística de **Toti Sanz**, priorizando:
+
+*   Impacto visual
+    
+*   Experiencia emocional
+    
+*   Claridad de contenido
+    
+*   Fluidez en la navegación
+    
+*   Coherencia estética en todas las secciones
+    
+
+📄 Licencia
+-----------
+
+Este proyecto es **privado**.El contenido, diseño y recursos pertenecen a **Toti Sanz** y no pueden ser reutilizados sin autorización expresa.
+
+👨‍💻 Desarrollo
+----------------
+
+Proyecto desarrollado con un enfoque moderno en **performance**, **animación** y **experiencia de usuario**, utilizando tecnologías actuales del ecosistema React y Next.js.
