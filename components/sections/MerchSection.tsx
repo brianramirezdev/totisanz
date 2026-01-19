@@ -1,17 +1,51 @@
+'use client';
+
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Lock, ShoppingBag } from 'lucide-react';
+import { Lock, ShoppingBag, Loader2 } from 'lucide-react';
 import Image from 'next/image';
+import { useState } from 'react';
 
 const products = [
-    { id: 1, name: 'Álbum Oficial', price: '25', image: '/images/album.webp', available: true, date: '14.02' },
-    { id: 2, name: 'Gorra Oficial', price: '20', image: '/images/album.webp', available: false, date: '21.03' },
-    { id: 3, name: 'Sudadera Oficial', price: '40', image: '/images/album.webp', available: false, date: '05.05' },
-    { id: 4, name: 'Póster Edición Limitada', price: '15', image: '/images/album.webp', available: false, date: '18.07' },
-    { id: 5, name: 'Llaveros Oficiales', price: '10', image: '/images/album.webp', available: false, date: '30.08' },
+    { id: 1, name: 'Álbum Oficial', price: '25', priceId: 'price_album_oficial', image: '/images/album.webp', available: true, date: '14.02' },
+    { id: 2, name: 'Gorra Oficial', price: '20', priceId: 'price_gorra_oficial', image: '/images/album.webp', available: false, date: '21.03' },
+    { id: 3, name: 'Sudadera Oficial', price: '40', priceId: 'price_sudadera_oficial', image: '/images/album.webp', available: false, date: '05.05' },
+    { id: 4, name: 'Póster Edición Limitada', price: '15', priceId: 'price_poster_limitada', image: '/images/album.webp', available: false, date: '18.07' },
+    { id: 5, name: 'Llaveros Oficiales', price: '10', priceId: 'price_llaveros_oficiales', image: '/images/album.webp', available: false, date: '30.08' },
 ];
 
 export default function MerchSection() {
+    const [loadingProductId, setLoadingProductId] = useState<number | null>(null);
+
+    const handleCheckout = async (priceId: string, productId: number) => {
+        try {
+            setLoadingProductId(productId);
+
+            const response = await fetch('/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ priceId }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Error response:', errorData);
+                throw new Error('Error en la respuesta del servidor');
+            }
+
+            const { url } = await response.json();
+
+            if (url) {
+                window.location.href = url;
+            }
+        } catch (error) {
+            console.error('Error al crear checkout:', error);
+            alert('Hubo un error al procesar el pago. Inténtalo de nuevo.');
+        } finally {
+            setLoadingProductId(null);
+        }
+    };
+
     return (
         <section id="merch" className="bg-white px-6 py-8 md:py-16 mx-4 rounded border border-gray-200">
             <div className="mx-auto max-w-7xl">
@@ -74,7 +108,6 @@ export default function MerchSection() {
 
                                     {!product.available && (
                                         <div className="absolute inset-0 flex items-center justify-center bg-linear-to-b from-zinc-700 to-black ">
-                                            {/* <p className="text-2xl font-bold text-white">Próximamente</p> */}
                                             <Lock className="size-8 text-white" />
                                         </div>
                                     )}
@@ -88,12 +121,18 @@ export default function MerchSection() {
                                         {product.available ? (
                                             <Button
                                                 type="button"
+                                                onClick={() => handleCheckout(product.priceId, product.id)}
+                                                disabled={loadingProductId === product.id}
                                                 aria-label={`Comprar ${product.name}`}
                                                 title={`Comprar ${product.name}`}
                                                 size="sm"
-                                                className=" gap-2 bg-accent-orange font-semibold transition-all hover:bg-orange-600"
+                                                className=" gap-2 bg-accent-orange font-semibold transition-all hover:bg-orange-600 disabled:opacity-50"
                                             >
-                                                <ShoppingBag className="size-4" aria-hidden="true" />
+                                                {loadingProductId === product.id ? (
+                                                    <Loader2 className="size-4 animate-spin" aria-hidden="true" />
+                                                ) : (
+                                                    <ShoppingBag className="size-4" aria-hidden="true" />
+                                                )}
                                             </Button>
                                         ) : (
                                             <Button
