@@ -5,12 +5,19 @@ import Link from 'next/link';
 import { CheckCircle2, Package, ArrowRight, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+import { useCart } from '@/contexts/CartContext';
+
 export default function SuccessPage() {
     const [mounted, setMounted] = useState(false);
+    const { clearCart, isInitialized } = useCart();
 
     useEffect(() => {
         setMounted(true);
-    }, []);
+        if (isInitialized) {
+            clearCart();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isInitialized]);
 
     return (
         <main className="min-h-screen bg-background-soft flex items-center justify-center px-6 py-12">

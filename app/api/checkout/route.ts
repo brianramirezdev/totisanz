@@ -16,32 +16,39 @@ const localProducts: Record<string, { name: string; price: number }> = {
 
 export async function POST(req: Request) {
   try {
-    const { priceId } = await req.json()
+    const body = await req.json()
+    const { items } = body // items: { priceId: string, quantity: number }[]
 
-    if (!priceId) {
-      return NextResponse.json({ error: 'Price ID requerido' }, { status: 400 })
+    if (!items || !Array.isArray(items) || items.length === 0) {
+      return NextResponse.json({ error: 'No items in cart' }, { status: 400 })
     }
 
-    // Busca el producto en tu catálogo local
-    const productData = localProducts[priceId]
+    const line_items = []
 
-    if (!productData) {
-      return NextResponse.json({ error: 'Producto no encontrado' }, { status: 404 })
+    for (const item of items) {
+      const productData = localProducts[item.priceId]
+      if (productData) {
+        line_items.push({
+          price_data: {
+            currency: 'eur',
+            product_data: {
+              name: productData.name,
+            },
+            unit_amount: productData.price,
+          },
+          quantity: item.quantity,
+        })
+      }
     }
 
-    // Crea la sesión de checkout con precio dinámico
+    if (line_items.length === 0) {
+        return NextResponse.json({ error: 'No valid items found' }, { status: 400 })
+    }
+
+    // Crea la sesión de checkout con múltiples items
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
-      line_items: [{
-        price_data: {
-          currency: 'eur',
-          product_data: {
-            name: productData.name,
-          },
-          unit_amount: productData.price, // Precio en centavos
-        },
-        quantity: 1,
-      }],
+      line_items: line_items,
       success_url: `${process.env.NEXT_PUBLIC_APP_URL}/success`,
       cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/cancel`,
     })

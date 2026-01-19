@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Lock, ShoppingBag, Loader2 } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useCart } from '@/contexts/CartContext';
 
 const products = [
     { id: 1, name: 'Álbum Oficial', price: '25', priceId: 'price_album_oficial', image: '/images/album.webp', available: true, date: '14.02' },
@@ -17,33 +18,24 @@ const products = [
 export default function MerchSection() {
     const [loadingProductId, setLoadingProductId] = useState<number | null>(null);
 
-    const handleCheckout = async (priceId: string, productId: number) => {
-        try {
-            setLoadingProductId(productId);
+    const { addItem } = useCart();
 
-            const response = await fetch('/api/checkout', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ priceId }),
+    const handleAddToCart = (product: typeof products[0]) => {
+        setLoadingProductId(product.id);
+
+        // Simular pequeño delay para feedback visual
+        setTimeout(() => {
+            addItem({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                priceId: product.priceId,
+                image: product.image,
+                available: product.available,
+                date: product.date
             });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                console.error('Error response:', errorData);
-                throw new Error('Error en la respuesta del servidor');
-            }
-
-            const { url } = await response.json();
-
-            if (url) {
-                window.location.href = url;
-            }
-        } catch (error) {
-            console.error('Error al crear checkout:', error);
-            alert('Hubo un error al procesar el pago. Inténtalo de nuevo.');
-        } finally {
             setLoadingProductId(null);
-        }
+        }, 500);
     };
 
     return (
@@ -121,10 +113,10 @@ export default function MerchSection() {
                                         {product.available ? (
                                             <Button
                                                 type="button"
-                                                onClick={() => handleCheckout(product.priceId, product.id)}
+                                                onClick={() => handleAddToCart(product)}
                                                 disabled={loadingProductId === product.id}
-                                                aria-label={`Comprar ${product.name}`}
-                                                title={`Comprar ${product.name}`}
+                                                aria-label={`Añadir ${product.name} al carrito`}
+                                                title={`Añadir ${product.name} al carrito`}
                                                 size="sm"
                                                 className=" gap-2 bg-accent-orange font-semibold transition-all hover:bg-orange-600 disabled:opacity-50"
                                             >
