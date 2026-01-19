@@ -28,8 +28,19 @@ export const metadata: Metadata = {
     description: 'Toti Sanz es cantante y compositor de Lanzarote. Descubre su música, singles, álbumes, conciertos y contacto.',
 
     icons: {
-        icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
-        apple: '/apple-icon-180x180.png',
+        icon: [
+            { url: 'https://www.totisanz.com/favicon.ico', sizes: 'any' },
+            { url: 'https://www.totisanz.com/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+        ],
+        apple: 'https://www.totisanz.com/apple-icon-180x180.png',
+        other: [
+            {
+                rel: 'icon',
+                url: 'https://www.totisanz.com/android-icon-192x192.png',
+                sizes: '192x192',
+                type: 'image/png',
+            },
+        ],
     },
 
     openGraph: {
