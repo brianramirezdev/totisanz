@@ -65,9 +65,10 @@ export default function MerchSection() {
                             <CardContent className="p-0 bg-background-soft">
                                 <div className="relative aspect-square overflow-hidden rounded-b-xl">
                                     <Image
+                                        width={500}
+                                        height={500}
                                         src={product.image}
                                         alt={product.name}
-                                        fill
                                         className={`object-cover transition-transform duration-300 group-hover:scale-105 ${!product.available ? 'blur-2xl' : ''}`}
                                     />
 

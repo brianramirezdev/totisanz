@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import Image from 'next/image';
 
 /* ───────────────── Types ───────────────── */
 
@@ -116,9 +117,13 @@ export default function CommunityCarousel() {
                                     className="group relative w-full overflow-hidden rounded-lg transition-transform duration-300 hover:scale-[1.02]"
                                 >
                                     <div className="relative aspect-3/4 w-full">
-                                        <img
+                                        <Image
+                                            width={500}
+                                            height={500}
                                             src={photo.img}
                                             alt={`Foto de la comunidad ${index + 1}`}
+                                            loading="lazy"
+                                            decoding="async"
                                             className="h-full w-full object-cover transition-all duration-300 group-hover:brightness-110"
                                         />
                                         <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -177,7 +182,9 @@ export default function CommunityCarousel() {
                     )}
 
                     {/* Image */}
-                    <img
+                    <Image
+                        width={500}
+                        height={500}
                         src={communityPhotos[activeIndex].img}
                         alt={`Foto de la comunidad ${activeIndex + 1}`}
                         className="max-h-[85vh] max-w-[90vw] rounded-lg object-contain shadow-2xl md:max-h-[90vh]"

@@ -55,7 +55,6 @@ export default function ContactForm() {
             if (response.ok) {
                 setSubmitStatus('success');
                 reset();
-                setTimeout(() => setSubmitStatus('idle'), 5000);
             } else {
                 setSubmitStatus('error');
             }
