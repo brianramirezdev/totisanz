@@ -125,13 +125,13 @@ export default function ContactForm() {
             {submitStatus === 'success' && (
                 <div className="flex items-center gap-2 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
                     <CheckCircle2 className="h-5 w-5 shrink-0" />
-                    <p className="font-medium">✓ ¡Mensaje enviado! Te responderé pronto.</p>
+                    <p className="font-medium">¡Mensaje enviado! Te responderé pronto.</p>
                 </div>
             )}
 
             {submitStatus === 'error' && (
                 <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-center">
-                    <p className="font-medium">✕ Hubo un error. Inténtalo de nuevo.</p>
+                    <p className="font-medium">Hubo un error. Inténtalo de nuevo.</p>
                 </div>
             )}
         </form>
