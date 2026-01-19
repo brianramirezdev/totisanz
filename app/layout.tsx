@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         description: 'Cantante y compositor de Lanzarote.',
         images: [
             {
-                url: '/images/og-image.jpg',
+                url: 'https://www.totisanz.com/images/og-image.jpg',
                 width: 1200,
                 height: 630,
                 alt: 'Toti Sanz, cantante y compositor',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Toti Sanz – Artista musical de Lanzarote',
         description: 'Cantante y compositor de Lanzarote.',
-        images: ['/images/og-image.jpg'],
+        images: ['https://www.totisanz.com/images/og-image.jpg'],
     },
 };
 
