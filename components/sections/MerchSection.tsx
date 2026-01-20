@@ -1,9 +1,5 @@
 'use client';
 
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Lock, ShoppingBag, Loader2 } from 'lucide-react';
-import Image from 'next/image';
 import { useState } from 'react';
 import { useCart } from '@/contexts/CartContext';
 import {
@@ -13,14 +9,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
-const products = [
-    { id: 1, name: 'Álbum Oficial', price: '25', priceId: 'price_album_oficial', image: '/images/album.webp', available: true, date: '14.02' },
-    { id: 2, name: 'Gorra Oficial', price: '20', priceId: 'price_gorra_oficial', image: '/images/album.webp', available: false, date: '21.03' },
-    { id: 3, name: 'Sudadera Oficial', price: '40', priceId: 'price_sudadera_oficial', image: '/images/album.webp', available: false, date: '05.05' },
-    { id: 4, name: 'Póster Edición Limitada', price: '15', priceId: 'price_poster_limitada', image: '/images/album.webp', available: false, date: '18.07' },
-    { id: 5, name: 'Llaveros Oficiales', price: '10', priceId: 'price_llaveros_oficiales', image: '/images/album.webp', available: false, date: '30.08' },
-];
+import { products } from '@/lib/data/merch';
+import { ProductCard } from '@/components/sections/merch/ProductCard';
 
 export default function MerchSection() {
     const [loadingProductId, setLoadingProductId] = useState<number | null>(null);
@@ -39,7 +29,7 @@ export default function MerchSection() {
                 available: product.available,
                 date: product.date
             });
-            setLoadingProductId(null);
+            setLoadingProductId(null)
     };
 
     return (
@@ -123,79 +113,5 @@ export default function MerchSection() {
                 </div>
             </div>
         </section>
-    );
-}
-
-// Sub-componente para reutilizar la tarjeta de producto
-function ProductCard({
-    product,
-    loadingProductId,
-    onAddToCart
-}: {
-    product: typeof products[0];
-    loadingProductId: number | null;
-    onAddToCart: (product: typeof products[0]) => void;
-}) {
-    return (
-        <Card
-            className={`group min-h-full h-fit overflow-hidden border transition-all ${
-                product.available ? 'hover:border-accent-orange lg:hover:shadow-lg' : ''
-            }  py-0`}
-        >
-            <CardContent className="p-0 bg-background-soft">
-                <div className="relative aspect-square overflow-hidden rounded-b-xl">
-                    <Image
-                        width={500}
-                        height={500}
-                        src={product.image}
-                        alt={product.name}
-                        className={`object-cover transition-transform duration-300 group-hover:scale-105 ${!product.available ? 'blur-2xl' : ''}`}
-                    />
-
-                    {!product.available && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-linear-to-b from-zinc-700 to-black ">
-                            <Lock className="size-8 text-white" />
-                        </div>
-                    )}
-                </div>
-
-                <div className="p-5 flex flex-col">
-                    <h3 className="mb-1 text-lg font-bold">{product.available ? product.name : 'Próximamente'}</h3>
-                    <div className="flex items-end justify-between">
-                        <p className="text-base text-gray-600">{product.available ? product.price + ' €' : '-'}</p>
-
-                        {product.available ? (
-                            <Button
-                                type="button"
-                                onClick={() => onAddToCart(product)}
-                                disabled={loadingProductId === product.id}
-                                aria-label={`Añadir ${product.name} al carrito`}
-                                title={`Añadir ${product.name} al carrito`}
-                                size="sm"
-                                className=" gap-2 bg-accent-orange font-semibold transition-all hover:bg-orange-600 disabled:opacity-50"
-                            >
-                                {loadingProductId === product.id ? (
-                                    <Loader2 className="size-4 animate-spin" aria-hidden="true" />
-                                ) : (
-                                    <ShoppingBag className="size-4" aria-hidden="true" />
-                                )}
-                            </Button>
-                        ) : (
-                            <Button
-                                type="button"
-                                aria-label={`${product.name} no disponible`}
-                                title="Producto no disponible"
-                                size="sm"
-                                variant="ghost"
-                                disabled
-                                className="mt-auto text-gray-400 bg-gray-200"
-                            >
-                                <Lock className="size-4" aria-hidden="true" />
-                            </Button>
-                        )}
-                    </div>
-                </div>
-            </CardContent>
-        </Card>
     );
 }
