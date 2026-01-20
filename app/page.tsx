@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <main className="font-sans text-black antialiased bg-background-soft">
-            <p className="text-red-900 bg-red-300 text-2xl py-1 px-2 w-full mt-17 fixed">testing</p>
             <Navigation />
             <HeroSection />
             <SingleSection />

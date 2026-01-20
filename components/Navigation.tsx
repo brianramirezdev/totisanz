@@ -48,31 +48,32 @@ export default function Navigation() {
                             </button>
                         </SheetTrigger>
 
-                    <SheetContent side="right" className="w-full max-w-sm p-4">
-                        <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
+                        <SheetContent side="right" className="w-full max-w-sm p-4">
+                            <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
 
-                        {/* Mobile Menu Header */}
-                        <div className="flex items-center justify-between border-b border-gray-200 pb-6">
-                            <h2 className="text-2xl">TOTI SANZ</h2>
-                        </div>
+                            {/* Mobile Menu Header */}
+                            <div className="flex items-center justify-between border-b border-gray-200 pb-6">
+                                <h2 className="text-2xl">TOTI SANZ</h2>
+                            </div>
 
-                        {/* Mobile Menu Links */}
-                        <nav className="flex flex-col">
-                            {links.map(([label, href]) => (
-                                <Link
-                                    key={label}
-                                    href={href}
-                                    onClick={handleLinkClick}
-                                    className="group flex items-center justify-between px-4 py-4 pl-2 text-lg transition-all hover:bg-orange-50 hover:text-orange-500 border-b border-orange-400"
-                                >
-                                    <span>{label}</span>
-                                </Link>
-                            ))}
-                        </nav>
-                    </SheetContent>
-                </Sheet>
+                            {/* Mobile Menu Links */}
+                            <nav className="flex flex-col">
+                                {links.map(([label, href]) => (
+                                    <Link
+                                        key={label}
+                                        href={href}
+                                        onClick={handleLinkClick}
+                                        className="group flex items-center justify-between px-4 py-4 pl-2 text-lg transition-all hover:bg-orange-50 hover:text-orange-500 border-b border-orange-400"
+                                    >
+                                        <span>{label}</span>
+                                    </Link>
+                                ))}
+                            </nav>
+                        </SheetContent>
+                    </Sheet>
                 </div>
             </div>
+            <p className="text-red-900 bg-red-300 text-2xl py-1 px-2 w-full">testing</p>
         </nav>
     );
 }
