@@ -1,18 +1,10 @@
 import Stripe from 'stripe'
 import { NextResponse } from 'next/server'
+import { products } from '@/lib/data/merch'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2025-12-15.clover',
 })
-
-// Define tus productos aquí (precios en centavos: 25€ = 2500)
-const localProducts: Record<string, { name: string; price: number }> = {
-  'price_album_oficial': { name: 'Álbum Oficial', price: 2500 },
-  'price_gorra_oficial': { name: 'Gorra Oficial', price: 2000 },
-  'price_sudadera_oficial': { name: 'Sudadera Oficial', price: 4000 },
-  'price_poster_limitada': { name: 'Póster Edición Limitada', price: 1500 },
-  'price_llaveros_oficiales': { name: 'Llaveros Oficiales', price: 1000 },
-}
 
 export async function POST(req: Request) {
   try {
@@ -26,15 +18,16 @@ export async function POST(req: Request) {
     const line_items = []
 
     for (const item of items) {
-      const productData = localProducts[item.priceId]
-      if (productData) {
+      const product = products.find(p => p.priceId === item.priceId)
+      if (product) {
+        const priceInCents = Math.round(parseFloat(product.price) * 100)
         line_items.push({
           price_data: {
             currency: 'eur',
             product_data: {
-              name: productData.name,
+              name: product.name,
             },
-            unit_amount: productData.price,
+            unit_amount: priceInCents,
           },
           quantity: item.quantity,
         })

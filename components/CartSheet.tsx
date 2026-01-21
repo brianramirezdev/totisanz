@@ -124,7 +124,7 @@ export function CartSheet() {
                   size="lg"
                   onClick={() => setOpen(false)}
                 >
-                  <Link href="/cart">Ver Carrito Completo</Link>
+                  <Link href="/checkout">Tramitar Pedido</Link>
                 </Button>
                 <Button
                   asChild

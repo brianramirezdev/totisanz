@@ -2,46 +2,14 @@
 
 import { useCart } from '@/contexts/CartContext';
 import { Button } from '@/components/ui/button';
-import { ShoppingCart, Plus, Minus, Trash2, ArrowLeft, Loader2 } from 'lucide-react';
+import { ShoppingCart, Plus, Minus, Trash2, ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function CartPage() {
   const { items, totalItems, totalPrice, updateQuantity, removeItem, clearCart } = useCart();
-  const [loading, setLoading] = useState(false);
 
-  const handleCheckout = async () => {
-    try {
-      setLoading(true);
 
-      const response = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          items: items.map(item => ({
-            priceId: item.priceId,
-            quantity: item.quantity
-          }))
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Error en la respuesta del servidor');
-      }
-
-      const { url } = await response.json();
-
-      if (url) {
-        window.location.href = url;
-      }
-    } catch (error) {
-      console.error('Error al crear checkout:', error);
-      alert('Hubo un error al procesar el pago. Inténtalo de nuevo.');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <main className="min-h-screen bg-background-soft py-12 px-6">
@@ -199,22 +167,14 @@ export default function CartPage() {
                 </div>
 
                 <Button
+                  asChild
                   className="w-full bg-accent-orange hover:bg-orange-600 font-semibold mb-3"
                   size="lg"
-                  onClick={handleCheckout}
-                  disabled={loading}
                 >
-                  {loading ? (
-                    <>
-                      <Loader2 className="size-5 mr-2 animate-spin" />
-                      Procesando...
-                    </>
-                  ) : (
-                    <>
-                      <ShoppingCart className="size-5 mr-2" />
-                      Proceder al Pago
-                    </>
-                  )}
+                  <Link href="/checkout">
+                    <ShoppingCart className="size-5 mr-2" />
+                    Proceder al Pago
+                  </Link>
                 </Button>
 
                 <Button
