@@ -24,14 +24,14 @@ const Marquee: React.FC<MarqueeProps> = ({ text, className = '', itemClassName =
         <div className={`overflow-hidden ${border && `border-y py-4 md:py-6 ${dark ? 'border-gray-50' : 'border-gray-900'}`} ${className} `}>
             <div className={`flex w-max ${SPEED_CLASS_MAP[speed]} ${reverse && 'animate-marquee-reverse'}`}>
                 {Array.from({ length: repeat }).map((_, i) => (
-                    <h2
+                    <span
                         key={i}
                         className={`text-nowrap font-bold text-4xl md:text-7xl lg:text-8xl ${xl && 'text-6xl xl:text-9xl'}   ${
                             dark ? 'text-gray-50' : 'text-gray-900'
                         } ${itemClassName}`}
                     >
                         {text}&nbsp;
-                    </h2>
+                    </span>
                 ))}
             </div>
         </div>

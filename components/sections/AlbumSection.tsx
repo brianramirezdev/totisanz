@@ -65,6 +65,9 @@ export default function AlbumSection() {
 
     return (
         <section id="album" className="mx-4 rounded bg-linear-to-b from-zinc-900 to-black px-6 py-8 text-white md:py-16 lg:mx-8 lg:py-24">
+            <div className="mb-8 md:mb-16 lg:mb-24">
+                <Marquee text="✦ SOLO PARA TI" dark={true} xl reverse repeat={3} speed="slow" border />
+            </div>
             <div className="mx-auto max-w-7xl overflow-hidden">
                 <div className="grid gap-6 lg:grid-cols-2 lg:gap-16">
                     {/* ── Cover / Video ── */}
