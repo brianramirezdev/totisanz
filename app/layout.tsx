@@ -27,22 +27,6 @@ export const metadata: Metadata = {
 
     description: 'Toti Sanz es cantante y compositor de Lanzarote. Descubre su música, singles, álbumes, conciertos y contacto.',
 
-    icons: {
-        icon: [
-            { url: 'https://www.totisanz.com/favicon.ico', sizes: 'any' },
-            { url: 'https://www.totisanz.com/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-        ],
-        apple: 'https://www.totisanz.com/apple-icon-180x180.png',
-        other: [
-            {
-                rel: 'icon',
-                url: 'https://www.totisanz.com/android-icon-192x192.png',
-                sizes: '192x192',
-                type: 'image/png',
-            },
-        ],
-    },
-
     openGraph: {
         type: 'website',
         locale: 'es_ES',
@@ -52,7 +36,7 @@ export const metadata: Metadata = {
         description: 'Cantante y compositor de Lanzarote.',
         images: [
             {
-                url: 'https://www.totisanz.com/images/og-image.jpg',
+                url: '/images/og-image.jpg',
                 width: 1200,
                 height: 630,
                 alt: 'Toti Sanz, cantante y compositor',
@@ -64,7 +48,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Toti Sanz – Artista musical de Lanzarote',
         description: 'Cantante y compositor de Lanzarote.',
-        images: ['https://www.totisanz.com/images/og-image.jpg'],
+        images: ['/images/og-image.jpg'],
     },
 };
 
